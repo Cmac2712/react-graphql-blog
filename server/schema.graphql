@@ -8,6 +8,10 @@ type SuccessMessage {
 	message: String!
 }
 
+type Test {
+	message: String!
+}
+
 type Query {
 	getPost(id: ID!): String!
 	me: User!
