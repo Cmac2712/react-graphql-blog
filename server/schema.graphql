@@ -1,0 +1,22 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type SuccessMessage {
+	message: String!
+}
+
+type Query {
+	getPost(id: ID!): String!
+	me: User!
+}
+
+type Mutation {
+	addPost(content: String!): ID!
+	signup(email: String!, password: String!, name: String!):User!
+	signin(email: String!, password: String!): User!
+	requestReset(email: String!): SuccessMessage
+	resetPassword(resetToken: String!, password: String!, confirmPassword: String!): User! 
+}
