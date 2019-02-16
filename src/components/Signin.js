@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import User, { CURRENT_USER_QUERY } from './User';
 import Signout from './Signout';
+import Signup from './Signup';
 import gql from 'graphql-tag';
 
 const SIGNIN_MUTATION = gql`
@@ -37,51 +38,54 @@ class Signin extends Component {
 					if (data && data.me) return <Signout/>
 
 					return (
-						<Mutation
-							mutation={SIGNIN_MUTATION}
-							variables={this.state}
-						>
-							{
-								(signin, {error, loading}) => {
+						<>
+							<Signup/>
+							<Mutation
+								mutation={SIGNIN_MUTATION}
+								variables={this.state}
+							>
+								{
+									(signin, {error, loading}) => {
 
-									if (error) return <p>error {error.message}</p>
+										if (error) return <p>error {error.message}</p>
 
-									if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
+										if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
 
-									refetch();
+										refetch();
 
-									return (
-										<form onSubmit={async e => {
-											e.preventDefault();
-											const user = await signin();
-											console.log(user);
-											this.setState({ name: "", email: "", password: "" });
-										}}
-									>
-										<h2>Sign In</h2>
-										<label htmlFor="email">Email</label>
-										<input
-											id="email"
-											type="email"
-											name="email"
-											value={this.state.email}
-											onChange={this.saveToState}
-										/>
-										<br/>
-										<label htmlFor="password">Password</label>
-										<input
-											id="password"
-											type="password"
-											name="password"
-											value={this.state.password}
-											onChange={this.saveToState}
-										/>
-										<button>Sign In</button>
-									</form>
-									);
+										return (
+											<form onSubmit={async e => {
+												e.preventDefault();
+												const user = await signin();
+												console.log(user);
+												this.setState({ name: "", email: "", password: "" });
+											}}
+										>
+											<h2>Sign In</h2>
+											<label htmlFor="email">Email</label>
+											<input
+												id="email"
+												type="email"
+												name="email"
+												value={this.state.email}
+												onChange={this.saveToState}
+											/>
+											<br/>
+											<label htmlFor="password">Password</label>
+											<input
+												id="password"
+												type="password"
+												name="password"
+												value={this.state.password}
+												onChange={this.saveToState}
+											/>
+											<button>Sign In</button>
+										</form>
+										);
+									}
 								}
-							}
-						</Mutation>
+							</Mutation>
+						</>
 					)
 				}
 			}
@@ -90,5 +94,6 @@ class Signin extends Component {
 		);
 	}
 }
+
 
 export default Signin;
