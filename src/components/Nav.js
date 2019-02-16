@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Signout from './Signout';
 import { Link } from 'react-router-dom';
 import User, { CURRENT_USER_QUERY } from './User';
 
@@ -17,9 +18,7 @@ const Nav = props => (
 								<Link to={`/createpost`}>
 									Create Post
 								</Link>
-								<Link to={`/login`}>
-									Log Out
-								</Link>
+								<Signout/>
 							</>
 							)
 						}
