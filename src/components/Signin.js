@@ -30,7 +30,7 @@ class Signin extends Component {
 		return (
 		<User>
 			{
-				({data, loading}) => {
+				({data, loading, refetch}) => {
 
 					if (loading) return <p>Loading...(CURRENT_USER_QUERY)</p>
 						
@@ -48,10 +48,13 @@ class Signin extends Component {
 
 									if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
 
+									refetch();
+
 									return (
 										<form onSubmit={async e => {
 											e.preventDefault();
-											await signin();
+											const user = await signin();
+											console.log(user);
 											this.setState({ name: "", email: "", password: "" });
 										}}
 									>
