@@ -1,4 +1,6 @@
 const uniqid = require('uniqid');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const mutations = {
 	addPost: (_, { content }) => {
@@ -11,20 +13,53 @@ const mutations = {
 
 		return id;
 	}, 
-	signup(_, { email, password, name }) {
+	async signup(parent, { email, password, name }, ctx, info) {
 
-		const user = {
-			id: uniqid(), 
-			name: name, 
-			email: email, 
-			password: password
-		};
+		// Very important 
+		const hashed = await bcrypt.hash(password, 10);
 
-		global.users.push(user);
+		const user = await ctx.prisma.mutation.createUser({
+			data: {
+				name, 
+				email: email.toLowerCase(), 
+				password: hashed 
+			}
+		}, info);
+
+		const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
+
+		ctx.response.cookie('token', token, {
+			httpOnly: true, 
+			maxAge: 1000 * 60 * 60 * 24 * 365 // 1 year cookie 
+		});
 
 		return user;
 	}, 
-	signin(_, { email, password }) {}, 
+    signout(parent, args, ctx, info) {
+      ctx.response.clearCookie('token');
+      return { message: 'Goodbye!' };
+    },
+	async signin(parent, { email, password }, ctx, info) {
+
+		const user = await ctx.prisma.query.user({ where: { email } });
+
+		if (!user) {
+			throw new Error(`No such user found for email ${email}`);
+		}
+
+		const valid = await bcrypt.compare(password, user.password);
+
+		if (!valid) { throw new Error(`Invalid Password!`); }
+
+		const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
+
+		ctx.response.cookie('token', token, {
+			httpOnly: true, 
+			maxAge: 1000 * 60 * 60 * 24 * 365 // 1 year cookie 
+		});
+
+		return user; 
+	}, 
 	requestReset(_, { content }) {}, 
 	resetPassword(_, { content }) {}, 
 }
