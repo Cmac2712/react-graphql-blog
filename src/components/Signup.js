@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import { CURRENT_USER_QUERY } from './User';
+import User, { CURRENT_USER_QUERY } from './User';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
@@ -14,15 +14,27 @@ const SIGNUP_MUTATION = gql`
 `;
 
 class Signup extends Component {
+
   state = {
     name: '',
     email: '',
     password: '',
   };
+
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   render() {
+		return (
+		<User>
+			{
+				({data, loading, refetch}) => {
+
+					if (loading) return <p>Loading...(CURRENT_USER_QUERY)</p>
+						
+					if (data && data.me) return <p></p>
+
     return (
       <Mutation
         mutation={SIGNUP_MUTATION}
@@ -76,7 +88,15 @@ class Signup extends Component {
           </form>
         )}
       </Mutation>
-    );
+    )
+
+
+				}
+			}
+		</User>
+
+		);
+					
   }
 }
 

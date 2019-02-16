@@ -3,15 +3,20 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const mutations = {
-	addPost: (_, { content }) => {
-		const id = uniqid();
+	async createPost(parent, { title, content }, ctx, info) {
 
-		global.posts.push({
-			id: id, 
-			content: content
-		});
+		if (!ctx.request.userId) {
+		  throw new Error('You are not logged in!');
+		}
 
-		return id;
+		const post = ctx.prisma.mutation.createPost({
+			data: {
+				title, 
+				content
+			}
+		}, info);
+		
+		return post;
 	}, 
 	async signup(parent, { email, password, name }, ctx, info) {
 

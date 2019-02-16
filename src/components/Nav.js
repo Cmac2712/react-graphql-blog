@@ -14,6 +14,9 @@ const Nav = props => (
 								<Link to={`/`}>
 									Home
 								</Link>
+								<Link to={`/createpost`}>
+									Create Post
+								</Link>
 								<Link to={`/login`}>
 									Log Out
 								</Link>
@@ -26,7 +29,7 @@ const Nav = props => (
 								<Link to={`/`}>
 									Home
 								</Link>
-								<Link to={`/login`}>
+								<Link to={`/account`}>
 									Log In / Create an Account
 								</Link>
 							</>

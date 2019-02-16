@@ -16,7 +16,6 @@ const SIGNIN_MUTATION = gql`
 `;
 
 class Signin extends Component {
-
 	state = {
 		name: '', 
 		email: '', 
@@ -29,71 +28,68 @@ class Signin extends Component {
 
 	render() {
 		return (
-		<User>
-			{
-				({data, loading, refetch}) => {
+			<User>
+				{
+					({data, loading, refetch}) => {
 
-					if (loading) return <p>Loading...(CURRENT_USER_QUERY)</p>
-						
-					if (data && data.me) return <Signout/>
+						if (loading) return <p>Loading...(CURRENT_USER_QUERY)</p>
 
-					return (
-						<>
-							<Signup/>
-							<Mutation
-								mutation={SIGNIN_MUTATION}
-								variables={this.state}
-							>
-								{
-									(signin, {error, loading}) => {
+							if (data && data.me) return <Signout/>
 
-										if (error) return <p>error {error.message}</p>
+							return (
+								<Mutation
+									mutation={SIGNIN_MUTATION}
+									variables={this.state}
+								>
+									{
+										(signin, {error, loading}) => {
 
-										if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
+											if (error) return <p>error {error.message}</p>
 
-										refetch();
+												if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
 
-										return (
-											<form onSubmit={async e => {
-												e.preventDefault();
-												const user = await signin();
-												console.log(user);
-												this.setState({ name: "", email: "", password: "" });
-											}}
-										>
-											<h2>Sign In</h2>
-											<label htmlFor="email">Email</label>
-											<input
-												id="email"
-												type="email"
-												name="email"
-												value={this.state.email}
-												onChange={this.saveToState}
-											/>
-											<br/>
-											<label htmlFor="password">Password</label>
-											<input
-												id="password"
-												type="password"
-												name="password"
-												value={this.state.password}
-												onChange={this.saveToState}
-											/>
-											<button>Sign In</button>
-										</form>
-										);
+												refetch();
+
+											return (
+												<form onSubmit={async e => {
+													e.preventDefault();
+													const user = await signin();
+													console.log(user);
+													this.setState({ name: "", email: "", password: "" });
+												}}
+											>
+												<fieldset disabled={loading} aria-busy={loading}>
+													<h2>Sign In</h2>
+													<label htmlFor="email">Email</label>
+													<input
+														id="email"
+														type="email"
+														name="email"
+														value={this.state.email}
+														onChange={this.saveToState}
+													/>
+													<label htmlFor="password">Password</label>
+													<input
+														id="password"
+														type="password"
+														name="password"
+														value={this.state.password}
+														onChange={this.saveToState}
+													/>
+													<button>Sign In</button>
+												</fieldset>
+											</form>
+											);
+										}
 									}
-								}
-							</Mutation>
-						</>
-					)
+								</Mutation>
+							)
+					}
 				}
-			}
-		</User>
+			</User>
 
 		);
 	}
 }
-
 
 export default Signin;

@@ -8,6 +8,6 @@ type User {
 type Post {
 	id: ID! @unique
 	title: String!
-	description: String!
+	content: String!
 	# user: User
 }

@@ -16,7 +16,7 @@ type Query {
 }
 
 type Mutation {
-	addPost(title: String!, description: String!): ID!
+	createPost(title: String!, content: String!): Post!
 	signup(email: String!, password: String!, name: String!):User!
 	signin(email: String!, password: String!): User!
 	signout: SuccessMessage

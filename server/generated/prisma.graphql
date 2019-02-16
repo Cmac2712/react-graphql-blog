@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/cmac2712-c30e8d/react-blog/dev
-# timestamp: Fri Feb 15 2019 19:52:57 GMT+1100 (Australian Eastern Daylight Time)
+# timestamp: Sat Feb 16 2019 21:46:06 GMT+1100 (Australian Eastern Daylight Time)
 
 type AggregatePost {
   count: Int!
@@ -65,7 +65,7 @@ type PageInfo {
 type Post implements Node {
   id: ID!
   title: String!
-  description: String!
+  content: String!
 }
 
 """A connection to a list of items."""
@@ -80,7 +80,7 @@ type PostConnection {
 
 input PostCreateInput {
   title: String!
-  description: String!
+  content: String!
 }
 
 """An edge in a connection."""
@@ -97,8 +97,8 @@ enum PostOrderByInput {
   id_DESC
   title_ASC
   title_DESC
-  description_ASC
-  description_DESC
+  content_ASC
+  content_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -108,7 +108,7 @@ enum PostOrderByInput {
 type PostPreviousValues {
   id: ID!
   title: String!
-  description: String!
+  content: String!
 }
 
 type PostSubscriptionPayload {
@@ -152,12 +152,12 @@ input PostSubscriptionWhereInput {
 
 input PostUpdateInput {
   title: String
-  description: String
+  content: String
 }
 
 input PostUpdateManyMutationInput {
   title: String
-  description: String
+  content: String
 }
 
 input PostWhereInput {
@@ -249,46 +249,46 @@ input PostWhereInput {
 
   """All values not ending with the given string."""
   title_not_ends_with: String
-  description: String
+  content: String
 
   """All values that are not equal to given value."""
-  description_not: String
+  content_not: String
 
   """All values that are contained in given list."""
-  description_in: [String!]
+  content_in: [String!]
 
   """All values that are not contained in given list."""
-  description_not_in: [String!]
+  content_not_in: [String!]
 
   """All values less than the given value."""
-  description_lt: String
+  content_lt: String
 
   """All values less than or equal the given value."""
-  description_lte: String
+  content_lte: String
 
   """All values greater than the given value."""
-  description_gt: String
+  content_gt: String
 
   """All values greater than or equal the given value."""
-  description_gte: String
+  content_gte: String
 
   """All values containing the given string."""
-  description_contains: String
+  content_contains: String
 
   """All values not containing the given string."""
-  description_not_contains: String
+  content_not_contains: String
 
   """All values starting with the given string."""
-  description_starts_with: String
+  content_starts_with: String
 
   """All values not starting with the given string."""
-  description_not_starts_with: String
+  content_not_starts_with: String
 
   """All values ending with the given string."""
-  description_ends_with: String
+  content_ends_with: String
 
   """All values not ending with the given string."""
-  description_not_ends_with: String
+  content_not_ends_with: String
 }
 
 input PostWhereUniqueInput {

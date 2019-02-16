@@ -3,9 +3,10 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from  'react-apollo';
 import { endpoint } from '../config';
 import gql from 'graphql-tag';
-import Signin from './Signin';
+import Account from './Account';
 import Nav from './Nav';
 import Posts from './Posts';
+import CreatePost from './CreatePost';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const client = new ApolloClient({
@@ -30,7 +31,8 @@ class App extends Component {
 						<Nav/>
 						<Switch>
 							<Route exact path={`/`} component={Posts} />
-							<Route exact path={`/login`} component={Signin} />
+							<Route exact path={`/account`} component={Account} />
+							<Route exact path={`/createpost`} component={CreatePost} />
 						</Switch>
 					</>
 				</Router>
