@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import PleaseSignIn from './PleaseSignIn';
+import { POSTS_QUERY } from './Posts'; 
 
 const CREATE_POST_MUTATION = gql`
 	mutation CREATE_POST_MUTATION($title: String!, $content: String!) {
@@ -30,6 +31,7 @@ class CreatePost extends Component {
 				<Mutation
 					mutation={CREATE_POST_MUTATION}
 					variables={this.state}
+					refetchQueries={[{query: POSTS_QUERY}]}
 				>
 			{
 				(createPost, { loading, error }) => {

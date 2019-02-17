@@ -4,6 +4,8 @@ import { Mutation } from 'react-apollo';
 import { CURRENT_USER_QUERY } from './User';
 import gql from 'graphql-tag';
 
+// TODO: Hide this if the user is logged in
+
 const RESET_MUTATION = gql`
   mutation RESET_MUTATION($resetToken: String!, $password: String!, $confirmPassword: String!) {
 	resetPassword(resetToken: $resetToken, password: $password, confirmPassword: $confirmPassword) {

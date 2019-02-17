@@ -1,5 +1,5 @@
 # import * from './generated/prisma.graphql'
-#
+
 type User {
   id: ID!
   name: String!
@@ -11,12 +11,14 @@ type SuccessMessage {
 }
 
 type Query {
-	getPost(id: ID!): String!
+	posts: [Post]!
+	post(where: PostWhereUniqueInput!): Post
 	me: User
 }
 
 type Mutation {
 	createPost(title: String!, content: String!): Post!
+	updatePost(id: ID!, title: String, content: String): Post!
 	signup(email: String!, password: String!, name: String!):User!
 	signin(email: String!, password: String!): User!
 	signout: SuccessMessage

@@ -39,12 +39,33 @@ const mutations = {
 		const post = ctx.prisma.mutation.createPost({
 			data: {
 				title, 
-				content
+				content, 
+				user: {
+					connect: {
+						id: ctx.request.userId
+					}
+				}
 			}
 		}, info);
 
 		return post;
 	}, 
+  updatePost(parent, args, ctx, info) {
+    // first take a copy of the updates
+    const updates = { ...args };
+    // remove the ID from the updates
+    delete updates.id;
+    // run the update method
+    return ctx.prisma.mutation.updatePost(
+      {
+        data: updates,
+        where: {
+          id: args.id,
+        },
+      },
+      info
+    );
+  },
 	async signup(parent, { email, password, name }, ctx, info) {
 
 		// Very important 

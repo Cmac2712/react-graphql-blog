@@ -7,6 +7,7 @@ import Account from './Account';
 import Nav from './Nav';
 import Posts from './Posts';
 import CreatePost from './CreatePost';
+import UpdatePost from './UpdatePost';
 import Reset from './Reset';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -35,6 +36,7 @@ class App extends Component {
 							<Route exact path={`/account`} component={Account} />
 							<Route exact path={`/createpost`} component={CreatePost} />
 							<Route path={`/reset`} component={Reset} />
+							<Route path={`/update`} component={UpdatePost} />
 						</Switch>
 					</>
 				</Router>
