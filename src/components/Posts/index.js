@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
-import User from './User';
-import DeletePost from './DeletePost';
+import User from '../User';
+import DeletePost from '../DeletePost';
 
 const ALL_POSTS_QUERY = gql`
 	query ALL_POSTS_QUERY {

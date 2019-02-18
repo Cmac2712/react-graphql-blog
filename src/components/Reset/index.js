@@ -1,7 +1,7 @@
 import qs from 'query-string';
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import { CURRENT_USER_QUERY } from './User';
+import { CURRENT_USER_QUERY } from '../User';
 import gql from 'graphql-tag';
 
 // TODO: Hide this if the user is logged in

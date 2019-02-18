@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import PleaseSignIn from './PleaseSignIn';
-import { ALL_POSTS_QUERY } from './Posts'; 
+import PleaseSignIn from '../PleaseSignIn';
+import { ALL_POSTS_QUERY } from '../Posts'; 
 
 const CREATE_POST_MUTATION = gql`
 	mutation CREATE_POST_MUTATION($title: String!, $content: String!) { createPost(title: $title, content: $content) { id

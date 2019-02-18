@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import Signout from './Signout';
+import Signout from '../Signout';
 import { Link } from 'react-router-dom';
-import User, { CURRENT_USER_QUERY } from './User';
+import User, { CURRENT_USER_QUERY } from '../User';
+import styled from 'styled-components';
+
+const NavBar = styled.nav`
+	display: flex;
+
+	a {
+		
+	}
+`;
 
 const Nav = props => (
-		<nav>
+		<NavBar>
 			<User>
 				{
 					({data, loading}) => {
@@ -36,7 +45,7 @@ const Nav = props => (
 					}
 				}
 			</User>
-		</nav>
+		</NavBar>
 );
 
 export default Nav;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import { ALL_POSTS_QUERY } from './Posts';
+import { ALL_POSTS_QUERY } from '../Posts';
 
 const DELETE_POST_MUTATION = gql`
 	mutation DELETE_POST_MUTATION($id: ID!) {

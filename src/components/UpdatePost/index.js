@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
-import User from './User';
+import User from '../User';
 
 const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {

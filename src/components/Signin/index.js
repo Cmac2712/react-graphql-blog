@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import User, { CURRENT_USER_QUERY } from './User';
-import Signout from './Signout';
-import Signup from './Signup';
+import User, { CURRENT_USER_QUERY } from '../User';
+import Signout from '../Signout';
+import Signup from '../Signup';
 import gql from 'graphql-tag';
 
 const SIGNIN_MUTATION = gql`
