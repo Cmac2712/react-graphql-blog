@@ -66,7 +66,16 @@ const mutations = {
       info
     );
   },
-	async signup(parent, { email, password, name }, ctx, info) {
+	async deletePost(parent, args, ctx, info) {
+		const post = await ctx.prisma.query.post({where: { id: args.id }}, `{id title user { id }}`);
+
+		const owner = post.user.id === ctx.request.userId;
+
+		if (!owner) throw new Error('You are not the author of this post');
+
+		return ctx.prisma.mutation.deletePost({where: { id: args.id }}, info);
+	}, 
+	async signup(parent, { email, password, njme }, ctx, info) {
 
 		// Very important 
 		const hashed = await bcrypt.hash(password, 10);
