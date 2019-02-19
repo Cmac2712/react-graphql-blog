@@ -3,16 +3,7 @@ import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import User from '../User';
-
-const SINGLE_POST_QUERY = gql`
-  query SINGLE_POST_QUERY($id: ID!) {
-	post(where: { id: $id }) {
-	  id
-	  title
-	  content
-	}
-  }
-`;
+import { SINGLE_POST_QUERY } from '../SinglePost';
 
 const UPDATE_POST_MUTATION = gql`
   mutation UPDATE_POST_QUERY($id: ID!, $title: String, $content: String) {
@@ -41,7 +32,6 @@ class UpdatePost extends Component {
 				...this.state,
 			},
 		});
-		console.log(res);
 	}
 
 	render() {

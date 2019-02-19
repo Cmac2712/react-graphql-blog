@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import Signout from '../Signout';
 import { Link } from 'react-router-dom';
 import User, { CURRENT_USER_QUERY } from '../User';
-import styled from 'styled-components';
-
-const NavBar = styled.nav`
-	display: flex;
-
-	a {
-		
-	}
-`;
+import NavBar from './styles';
 
 const Nav = props => (
 		<NavBar>
@@ -25,9 +17,8 @@ const Nav = props => (
 									Home
 								</Link>
 								<Link to={`/createpost`}>
-									Create Post
+									Add Post
 								</Link>
-								<Signout/>
 							</>
 							)
 						}

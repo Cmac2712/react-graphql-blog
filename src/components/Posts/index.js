@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import User from '../User';
 import DeletePost from '../DeletePost';
+import { Wrapper } from '../App/Theme';
+import { StyledPosts, StyledPost } from './styles';
 
 const ALL_POSTS_QUERY = gql`
 	query ALL_POSTS_QUERY {
@@ -22,35 +24,39 @@ class Posts extends Component {
 
 	render() {
 		return (
-			<ul>
-				<Query
-			query={ALL_POSTS_QUERY}
-			>
-			{
-				({data: {posts}, loading, error}) => {
+			<Wrapper>
+				<StyledPosts>
+					<Query
+				query={ALL_POSTS_QUERY}
+				>
+				{
+					({data: {posts}, loading, error}) => {
 
-					if (loading) return <p>loading...</p>;
+						if (loading) return <p>loading...</p>;
 
-					return posts.map(post => (
-						<Post post={post} />
-					)) 
+						return posts.map(post => (
+							<Post post={post} />
+						)) 
+					}
 				}
-			}
-		</Query>
-	</ul>
+			</Query>
+		</StyledPosts>
+			</Wrapper>
 		)
 	}
 
 }
 
 const Post = ({ post, id }) => (
-	<li key={post.id}>
-		<h4>{post.title}</h4>
-		<p>{post.content}</p>
-		<p>{post.user && post.user.name}</p>
+	<StyledPost key={post.id}>
+		<Link to={`/single?postId=${post.id}`}>
+			<h4>{post.title}</h4>
+			<p>{post.content}</p>
+			<p>{post.user && post.user.name}</p>
+		</Link>
 		<Link to={`/update?postId=${post.id}`}>Edit</Link>
 		<DeletePost id={post.id}/>
-	</li>
+	</StyledPost>
 )
 
 export default Posts;
