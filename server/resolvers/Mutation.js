@@ -30,7 +30,7 @@ const createEmail = text => `
 `;
 
 const mutations = {
-	async createPost(parent, { title, content }, ctx, info) {
+	async createPost(parent, { title, content, thumbnail }, ctx, info) {
 
 		if (!ctx.request.userId) {
 			throw new Error('You are not logged in!');
@@ -40,6 +40,7 @@ const mutations = {
 			data: {
 				title, 
 				content, 
+				thumbnail, 
 				user: {
 					connect: {
 						id: ctx.request.userId

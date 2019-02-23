@@ -1,19 +1,30 @@
 import styled from 'styled-components';
 
+
 const StyledPosts = styled.ul`
+	display: flex;
+	justify-content: space-between;
 	list-style-type: none;
 `;
 
 const StyledPost = styled.li`
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-basis: 23%;
 	background-color: #fefefe;
 	margin: 0;	
 	padding: ${props => props.theme.spacingUnitHalf};
 	border-radius: 4px;
-	display: inline-block;
-	box-shadow: 2px 3px 0 rgba(0, 0, 0, .1);
+	padding: ${props => props.theme.spacingUnitHalf};
+	${props => props.theme.boxShadow};
 
 	h4 {
 		font-size: 25px;
+	}
+
+	a {
+		color: ${props => props.theme.baseText};
 	}
 `; 	
 

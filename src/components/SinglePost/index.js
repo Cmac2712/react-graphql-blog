@@ -11,6 +11,7 @@ const SINGLE_POST_QUERY = gql`
 	  id
 	  title
 	  content
+		thumbnail
 		user {
 			name
 		}
@@ -39,6 +40,7 @@ class SinglePost extends Component {
 					return (
 						<Wrapper>
 							<div>
+								<img src={post.thumbnail} />
 								<h1>{post.title}</h1>
 								<p>{post.content}</p>
 								<p>{post.user.name}</p>

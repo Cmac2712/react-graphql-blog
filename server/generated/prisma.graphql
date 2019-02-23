@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/cmac2712-c30e8d/react-blog/dev
-# timestamp: Sun Feb 17 2019 00:13:16 GMT+1100 (Australian Eastern Daylight Time)
+# timestamp: Wed Feb 20 2019 22:27:11 GMT+1100 (Australian Eastern Daylight Time)
 
 type AggregatePost {
   count: Int!
@@ -66,6 +66,7 @@ type Post implements Node {
   id: ID!
   title: String!
   content: String!
+  thumbnail: String
   user: User
 }
 
@@ -82,6 +83,7 @@ type PostConnection {
 input PostCreateInput {
   title: String!
   content: String!
+  thumbnail: String
   user: UserCreateOneInput
 }
 
@@ -101,6 +103,8 @@ enum PostOrderByInput {
   title_DESC
   content_ASC
   content_DESC
+  thumbnail_ASC
+  thumbnail_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -111,6 +115,7 @@ type PostPreviousValues {
   id: ID!
   title: String!
   content: String!
+  thumbnail: String
 }
 
 type PostSubscriptionPayload {
@@ -155,12 +160,14 @@ input PostSubscriptionWhereInput {
 input PostUpdateInput {
   title: String
   content: String
+  thumbnail: String
   user: UserUpdateOneInput
 }
 
 input PostUpdateManyMutationInput {
   title: String
   content: String
+  thumbnail: String
 }
 
 input PostWhereInput {
@@ -292,6 +299,46 @@ input PostWhereInput {
 
   """All values not ending with the given string."""
   content_not_ends_with: String
+  thumbnail: String
+
+  """All values that are not equal to given value."""
+  thumbnail_not: String
+
+  """All values that are contained in given list."""
+  thumbnail_in: [String!]
+
+  """All values that are not contained in given list."""
+  thumbnail_not_in: [String!]
+
+  """All values less than the given value."""
+  thumbnail_lt: String
+
+  """All values less than or equal the given value."""
+  thumbnail_lte: String
+
+  """All values greater than the given value."""
+  thumbnail_gt: String
+
+  """All values greater than or equal the given value."""
+  thumbnail_gte: String
+
+  """All values containing the given string."""
+  thumbnail_contains: String
+
+  """All values not containing the given string."""
+  thumbnail_not_contains: String
+
+  """All values starting with the given string."""
+  thumbnail_starts_with: String
+
+  """All values not starting with the given string."""
+  thumbnail_not_starts_with: String
+
+  """All values ending with the given string."""
+  thumbnail_ends_with: String
+
+  """All values not ending with the given string."""
+  thumbnail_not_ends_with: String
   user: UserWhereInput
 }
 

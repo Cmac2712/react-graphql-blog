@@ -5,6 +5,7 @@ const NavBar = styled.nav`
 	justify-content: flex-end;
 	background-color: ${props => props.theme.brandColor};
 	padding: ${props => props.theme.spacingUnit};
+	${props => props.theme.boxShadow};
 	
 	a {
 		color: #fff;

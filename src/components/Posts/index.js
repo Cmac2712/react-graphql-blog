@@ -22,6 +22,11 @@ const ALL_POSTS_QUERY = gql`
 
 class Posts extends Component {
 
+	clip = text => {
+
+		return text.split(/\s+/).slice(0,20).join(" ") + "...";
+	}
+
 	render() {
 		return (
 			<Wrapper>
@@ -35,7 +40,7 @@ class Posts extends Component {
 						if (loading) return <p>loading...</p>;
 
 						return posts.map(post => (
-							<Post post={post} />
+							<Post post={post} clip={this.clip} />
 						)) 
 					}
 				}
@@ -47,11 +52,11 @@ class Posts extends Component {
 
 }
 
-const Post = ({ post, id }) => (
+const Post = ({ post, id, clip }) => (
 	<StyledPost key={post.id}>
 		<Link to={`/single?postId=${post.id}`}>
 			<h4>{post.title}</h4>
-			<p>{post.content}</p>
+			<p>{clip(post.content)}</p>
 			<p>{post.user && post.user.name}</p>
 		</Link>
 		<Link to={`/update?postId=${post.id}`}>Edit</Link>
