@@ -6,6 +6,8 @@ import { ALL_POSTS_QUERY } from '../Posts';
 import { Wrapper, Form, Button } from '../App/Theme';
 import { CreatePostForm } from './styles';
 
+// TODO: Add floating labels
+
 const CREATE_POST_MUTATION = gql`
 	mutation CREATE_POST_MUTATION(
 		$title: String!

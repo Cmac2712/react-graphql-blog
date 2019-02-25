@@ -10,6 +10,7 @@ const CreatePostForm = styled(Form)`
 	input, 
 	textarea {
 		width: 100%;
+		margin-bottom: ${props => props.theme.spacingUnit}
 	}
 
 	button {
