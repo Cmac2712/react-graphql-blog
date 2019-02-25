@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import FloatingLabel from 'floating-label-react'
+import { Form, Button, inputStyle } from '../App/Theme';
 
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!) {
@@ -27,7 +29,8 @@ class RequestReset extends Component {
 			variables={this.state}
 		>
         {(reset, { error, loading, called }) => (
-          <form
+          <Form
+						style={{display: 'none'}}
             method="post"
             data-test="form"
             onSubmit={async e => {
@@ -40,20 +43,18 @@ class RequestReset extends Component {
               <h2>Request a password reset</h2>
 				{error && <p>error</p>}
               {!error && !loading && called && <p>Success! Check your email for a reset link!</p>}
-              <label htmlFor="email">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  value={this.state.email}
-                  onChange={this.saveToState}
-                />
-              </label>
+							<FloatingLabel
+								type="email"
+								name="email"
+								placeholder="email"
+								styles={inputStyle}
+								value={this.state.email}
+								onChange={this.saveToState}
+							/>
 
-              <button type="submit">Request Reset!</button>
+              <Button type="submit">Request Reset!</Button>
             </fieldset>
-          </form>
+          </Form>
         )}
       </Mutation>
     );

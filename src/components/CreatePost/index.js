@@ -29,7 +29,8 @@ class CreatePost extends Component {
 
 	state = {
 		title: '', 
-		content: ''
+		content: '', 
+		uploading: false
 	}
 
 	saveToState = e => {
@@ -49,21 +50,19 @@ class CreatePost extends Component {
 		data.append('file', file);
     data.append('upload_preset', 'sickfits');
 
-		console.log(data);
-
     const res = await fetch('https://api.cloudinary.com/v1_1/cmacintyre/image/upload',
 		{
       method: 'POST',
       body: data,
     });
 
-    const thumbnail = await res.json();
-
-		console.log({ thumbnail });
+    const thumbnail = res.json();
 
     this.setState({
       thumbnail: thumbnail.secure_url,
     });
+
+		return thumbnail;
 	};
 
 	render() {
@@ -82,11 +81,14 @@ class CreatePost extends Component {
 
 						return (
 						<CreatePostForm
+							disabled={this.state.publishing}
 							onSubmit={async e => {
 								e.preventDefault();
-								await this.uploadImage(e);
-
+								this.setState({ uploading: true });
+								const thumbnail = await this.uploadImage(e);
 								const { data } = await createPost();
+
+								this.setState({ uploading: false });
 
 								this.props.history.push(`/single?postId=${data.createPost.id}`)
 							}}
@@ -112,7 +114,7 @@ class CreatePost extends Component {
 									name="file"
 									onChange={this.handleFile}
 								/>
-								<Button>Publish</Button>
+								<Button>Publish{this.state.uploading && 'ing'}</Button>
 							</fieldset>
 						</CreatePostForm>
 						)

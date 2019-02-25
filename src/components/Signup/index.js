@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
+import FloatingLabel from 'floating-label-react'
 import gql from 'graphql-tag';
 import User, { CURRENT_USER_QUERY } from '../User';
+import { Form, Button, inputStyle } from '../App/Theme';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
@@ -42,7 +44,7 @@ class Signup extends Component {
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(signup, { error, loading }) => (
-          <form
+          <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
@@ -51,41 +53,35 @@ class Signup extends Component {
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Sign Up for An Account</h2>
-              <label htmlFor="email">
-                Email
-                <input
+              <h2>Sign Up</h2>
+                <FloatingLabel
                   type="email"
                   name="email"
                   placeholder="email"
+									styles={inputStyle}
                   value={this.state.email}
                   onChange={this.saveToState}
                 />
-              </label>
-              <label htmlFor="name">
-                Name
-                <input
+                <FloatingLabel
                   type="text"
                   name="name"
                   placeholder="name"
+									styles={inputStyle}
                   value={this.state.name}
                   onChange={this.saveToState}
                 />
-              </label>
-              <label htmlFor="password">
-                Password
-                <input
+                <FloatingLabel
                   type="password"
                   name="password"
                   placeholder="password"
+									styles={inputStyle}
                   value={this.state.password}
                   onChange={this.saveToState}
                 />
-              </label>
 
-              <button type="submit">Sign Up!</button>
+              <Button type="submit">Sign Up</Button>
             </fieldset>
-          </form>
+          </Form>
         )}
       </Mutation>
     )

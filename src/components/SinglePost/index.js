@@ -35,8 +35,6 @@ class SinglePost extends Component {
 
 					if (loading) return <p>Loading...</p>;
 
-					console.log(post);
-
 					return (
 						<Wrapper>
 							<div>

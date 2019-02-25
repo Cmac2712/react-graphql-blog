@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
+import FloatingLabel from 'floating-label-react'
 import User, { CURRENT_USER_QUERY } from '../User';
+import Loading from '../Loading';
 import Signout from '../Signout';
 import Signup from '../Signup';
 import gql from 'graphql-tag';
+import { Form, FormWrapper,  Button, inputStyle } from '../App/Theme';
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -32,8 +35,6 @@ class Signin extends Component {
 				{
 					({data, loading, refetch}) => {
 
-						if (loading) return <p>Loading...(CURRENT_USER_QUERY)</p>
-
 							if (data && data.me) return <Signout/>
 
 							return (
@@ -46,39 +47,43 @@ class Signin extends Component {
 
 											if (error) return <p>error {error.message}</p>
 
-												if (loading) return <p>Loading...(SIGNIN_MUTATION)</p>
-
-												refetch();
+											refetch();
 
 											return (
-												<form onSubmit={async e => {
-													e.preventDefault();
-													const user = await signin();
-													console.log(user);
-													this.setState({ name: "", email: "", password: "" });
-												}}
-											>
-												<fieldset disabled={loading} aria-busy={loading}>
-													<h2>Sign In</h2>
-													<label htmlFor="email">Email</label>
-													<input
-														id="email"
-														type="email"
-														name="email"
-														value={this.state.email}
-														onChange={this.saveToState}
-													/>
-													<label htmlFor="password">Password</label>
-													<input
-														id="password"
-														type="password"
-														name="password"
-														value={this.state.password}
-														onChange={this.saveToState}
-													/>
-													<button>Sign In</button>
-												</fieldset>
-											</form>
+												<FormWrapper>
+													{ loading && <Loading/> }
+													<Form
+														onSubmit={async e => {
+														e.preventDefault();
+														const user = await signin();
+														this.setState({ name: "", email: "", password: "" });
+													}}
+													disabled={loading}
+												>
+													<fieldset disabled={loading} aria-busy={loading}>
+														<h2>Sign In</h2>
+														<FloatingLabel
+															id="email"
+															type="email"
+															name="email"
+															placeholder="email"
+															styles={inputStyle}
+															value={this.state.email}
+															onChange={this.saveToState}
+														/>
+														<FloatingLabel
+															id="password"
+															type="password"
+															name="password"
+															placeholder="password"
+															styles={inputStyle}
+															value={this.state.password}
+															onChange={this.saveToState}
+														/>
+														<Button>Sign In</Button>
+													</fieldset>
+												</Form>
+												</FormWrapper>
 											);
 										}
 									}

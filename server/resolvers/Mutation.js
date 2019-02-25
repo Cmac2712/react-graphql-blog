@@ -76,7 +76,7 @@ const mutations = {
 
 		return ctx.prisma.mutation.deletePost({where: { id: args.id }}, info);
 	}, 
-	async signup(parent, { email, password, njme }, ctx, info) {
+	async signup(parent, { email, password, name }, ctx, info) {
 
 		// Very important 
 		const hashed = await bcrypt.hash(password, 10);

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
-import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import User from '../User';
-import DeletePost from '../DeletePost';
+import Post from './Post';
 import { Wrapper } from '../App/Theme';
-import { StyledPosts, StyledPost } from './styles';
+import { StyledPosts, Thumbnail } from './styles';
 
 const ALL_POSTS_QUERY = gql`
 	query ALL_POSTS_QUERY {
@@ -13,6 +12,7 @@ const ALL_POSTS_QUERY = gql`
 			id
 			title
 			content
+			thumbnail
 			user {
 				name
 			}
@@ -23,7 +23,6 @@ const ALL_POSTS_QUERY = gql`
 class Posts extends Component {
 
 	clip = text => {
-
 		return text.split(/\s+/).slice(0,20).join(" ") + "...";
 	}
 
@@ -52,17 +51,6 @@ class Posts extends Component {
 
 }
 
-const Post = ({ post, id, clip }) => (
-	<StyledPost key={post.id}>
-		<Link to={`/single?postId=${post.id}`}>
-			<h4>{post.title}</h4>
-			<p>{clip(post.content)}</p>
-			<p>{post.user && post.user.name}</p>
-		</Link>
-		<Link to={`/update?postId=${post.id}`}>Edit</Link>
-		<DeletePost id={post.id}/>
-	</StyledPost>
-)
 
 export default Posts;
 export { ALL_POSTS_QUERY }
