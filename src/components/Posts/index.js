@@ -15,6 +15,7 @@ const ALL_POSTS_QUERY = gql`
 			thumbnail
 			user {
 				name
+				screenName
 			}
 		}
 	}
@@ -31,20 +32,20 @@ class Posts extends Component {
 			<Wrapper>
 				<StyledPosts>
 					<Query
-				query={ALL_POSTS_QUERY}
-				>
-				{
-					({data: {posts}, loading, error}) => {
+						query={ALL_POSTS_QUERY}
+					>
+						{
+							({data: {posts}, loading, error}) => {
 
-						if (loading) return <p>loading...</p>;
+								if (loading) return <p>loading...</p>;
 
-						return posts.map(post => (
-							<Post post={post} clip={this.clip} />
-						)) 
-					}
-				}
-			</Query>
-		</StyledPosts>
+								return posts.map(post => (
+									<Post post={post} clip={this.clip} />
+								)) 
+							}
+						}
+					</Query>
+				</StyledPosts>
 			</Wrapper>
 		)
 	}

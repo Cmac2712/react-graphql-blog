@@ -16,8 +16,8 @@ const Nav = props => (
 								<Link to={`/`}>
 									Home
 								</Link>
-								<Link to={`/createpost`}>
-									Add Post
+								<Link to={`/cms`}>
+									Dashboard
 								</Link>
 							</>
 							)
@@ -28,7 +28,7 @@ const Nav = props => (
 								<Link to={`/`}>
 									Home
 								</Link>
-								<Link to={`/account`}>
+								<Link to={`/cms`}>
 									Log In / Create an Account
 								</Link>
 							</>

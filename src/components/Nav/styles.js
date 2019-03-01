@@ -6,6 +6,8 @@ const NavBar = styled.nav`
 	background-color: ${props => props.theme.brandColor};
 	padding: ${props => props.theme.spacingUnit};
 	${props => props.theme.boxShadow};
+	position: relative;
+	z-index: 5;
 	
 	a {
 		color: #fff;

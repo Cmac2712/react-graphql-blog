@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/cmac2712-c30e8d/react-blog/dev
-# timestamp: Wed Feb 20 2019 22:27:11 GMT+1100 (Australian Eastern Daylight Time)
+# timestamp: Fri Mar 01 2019 11:54:52 GMT+1100 (Australian Eastern Daylight Time)
 
 type AggregatePost {
   count: Int!
@@ -369,6 +369,8 @@ type Subscription {
 type User implements Node {
   id: ID!
   name: String!
+  screenName: String
+  avatar: String
   email: String!
   password: String!
   resetToken: String
@@ -387,6 +389,8 @@ type UserConnection {
 
 input UserCreateInput {
   name: String!
+  screenName: String
+  avatar: String
   email: String!
   password: String!
   resetToken: String
@@ -412,6 +416,10 @@ enum UserOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  screenName_ASC
+  screenName_DESC
+  avatar_ASC
+  avatar_DESC
   email_ASC
   email_DESC
   password_ASC
@@ -429,6 +437,8 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   name: String!
+  screenName: String
+  avatar: String
   email: String!
   password: String!
   resetToken: String
@@ -476,6 +486,8 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateDataInput {
   name: String
+  screenName: String
+  avatar: String
   email: String
   password: String
   resetToken: String
@@ -484,6 +496,8 @@ input UserUpdateDataInput {
 
 input UserUpdateInput {
   name: String
+  screenName: String
+  avatar: String
   email: String
   password: String
   resetToken: String
@@ -492,6 +506,8 @@ input UserUpdateInput {
 
 input UserUpdateManyMutationInput {
   name: String
+  screenName: String
+  avatar: String
   email: String
   password: String
   resetToken: String
@@ -601,6 +617,86 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   name_not_ends_with: String
+  screenName: String
+
+  """All values that are not equal to given value."""
+  screenName_not: String
+
+  """All values that are contained in given list."""
+  screenName_in: [String!]
+
+  """All values that are not contained in given list."""
+  screenName_not_in: [String!]
+
+  """All values less than the given value."""
+  screenName_lt: String
+
+  """All values less than or equal the given value."""
+  screenName_lte: String
+
+  """All values greater than the given value."""
+  screenName_gt: String
+
+  """All values greater than or equal the given value."""
+  screenName_gte: String
+
+  """All values containing the given string."""
+  screenName_contains: String
+
+  """All values not containing the given string."""
+  screenName_not_contains: String
+
+  """All values starting with the given string."""
+  screenName_starts_with: String
+
+  """All values not starting with the given string."""
+  screenName_not_starts_with: String
+
+  """All values ending with the given string."""
+  screenName_ends_with: String
+
+  """All values not ending with the given string."""
+  screenName_not_ends_with: String
+  avatar: String
+
+  """All values that are not equal to given value."""
+  avatar_not: String
+
+  """All values that are contained in given list."""
+  avatar_in: [String!]
+
+  """All values that are not contained in given list."""
+  avatar_not_in: [String!]
+
+  """All values less than the given value."""
+  avatar_lt: String
+
+  """All values less than or equal the given value."""
+  avatar_lte: String
+
+  """All values greater than the given value."""
+  avatar_gt: String
+
+  """All values greater than or equal the given value."""
+  avatar_gte: String
+
+  """All values containing the given string."""
+  avatar_contains: String
+
+  """All values not containing the given string."""
+  avatar_not_contains: String
+
+  """All values starting with the given string."""
+  avatar_starts_with: String
+
+  """All values not starting with the given string."""
+  avatar_not_starts_with: String
+
+  """All values ending with the given string."""
+  avatar_ends_with: String
+
+  """All values not ending with the given string."""
+  avatar_not_ends_with: String
   email: String
 
   """All values that are not equal to given value."""

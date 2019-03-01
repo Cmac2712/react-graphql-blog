@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import PleaseSignIn from '../PleaseSignIn';
 import { ALL_POSTS_QUERY } from '../Posts'; 
 import { Wrapper, Form, Button } from '../App/Theme';
 import { CreatePostForm } from './styles';
@@ -58,7 +57,7 @@ class CreatePost extends Component {
       body: data,
     });
 
-    const thumbnail = res.json();
+    const thumbnail = await res.json();
 
     this.setState({
       thumbnail: thumbnail.secure_url,
@@ -69,7 +68,6 @@ class CreatePost extends Component {
 
 	render() {
 		return (
-			<PleaseSignIn>
 				<Wrapper>
 					<Mutation
 						mutation={CREATE_POST_MUTATION}
@@ -124,7 +122,6 @@ class CreatePost extends Component {
 				}
 					</Mutation>
 				</Wrapper>
-			</PleaseSignIn>
 		)
 	}
 }

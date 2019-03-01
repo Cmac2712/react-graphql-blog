@@ -118,6 +118,7 @@ const Form = styled.form`
 
 	input, 
 	textarea{
+		display: block;
 		border: 0;
 		background-color: #f6f6f6;
 		border-radius: 4px;

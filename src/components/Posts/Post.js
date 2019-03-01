@@ -12,7 +12,7 @@ const Post = ({ post, id, clip }) => (
 			<div className="text">
 				<h4>{post.title}</h4>
 				<p>{clip(post.content)}</p>
-				<p className="author">Post by <strong>{post.user && post.user.name}</strong></p>
+				<p className="author">Post by <strong>{post.user && post.user.screenName || post.user.name}</strong></p>
 			</div>
 		</Link>
 	</StyledPost>

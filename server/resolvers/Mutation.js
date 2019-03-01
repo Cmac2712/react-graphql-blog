@@ -188,6 +188,25 @@ const mutations = {
 		// 8. return the new user
 		return updatedUser;
 	},
+	async updateUserInfo(parent, args, ctx, info) {
+
+		if (!ctx.request.userId) {
+			throw new Error('You are not logged in!');
+		}
+
+		const userId = ctx.request.userId;
+
+		const screenName = args.screenName;
+
+		const user = await ctx.prisma.mutation.updateUser({
+			where: { id: userId }, 
+			data: {
+				screenName
+			}
+		}, info);			
+
+		return user;
+	}
 }
 
 module.exports = mutations;

@@ -1,6 +1,8 @@
 type User {
   id: ID! @unique
   name: String! 
+	screenName: String
+	avatar: String
   email: String! @unique
   password: String!
   resetToken: String

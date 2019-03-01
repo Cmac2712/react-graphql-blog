@@ -1,32 +1,82 @@
 import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
-import User, { CURRENT_USER_QUERY } from '../User';
-import Signout from '../Signout';
-import Signin from '../Signin';
-import Signup from '../Signup';
-import RequestReset from '../RequestReset';
 import gql from 'graphql-tag';
-import { Wrapper } from '../App/Theme';
-import { SignInStyles } from './style';
+import { Mutation } from 'react-apollo';
+import Portal from '../Portal';
+import { Wrapper, Form, FormWrapper, Button } from '../App/Theme';
+import Sidebar from '../Cms/Sidebar';
 
-// TODO: Move User query here instead of having one in signup and signin
+// Update User
+const UPDATE_USER_INFO_MUTATION = gql`
+	mutation UPDATE_USER_INFO_MUTATION(
+		$screenName: String!
+	) {
+	updateUserInfo(screenName: $screenName) {
+			id
+		}
+	}
+`;
 
 class Account extends Component {
 
+	state = {
+		screenName: '', 
+		avatar: ''
+	}	
+
+	saveToState = e => {
+		this.setState({[e.target.name]: e.target.value});
+	}
+	
 	render() {
 		return (
-			<SignInStyles>
-				<Wrapper>
-					<div className="forms">
-						<Signin/>
-						<Signup/>
-					</div>
-					<RequestReset/>
-				</Wrapper>
-			</SignInStyles>
+		<Mutation
+			mutation={UPDATE_USER_INFO_MUTATION}
+			variables={
+				{
+					screenName: this.state.screenName	
+				}
+			}
+		>
+			{
+				(updateUserInfo, loading, error) => {
+					return (
+								<Portal>
+									<Sidebar/>
+									<Wrapper>
+										<FormWrapper
+												onSubmit={
+													async e => {
+														e.preventDefault();
+
+														const userInfo = await updateUserInfo();
+
+														console.log(userInfo);
+													}
+											}
+										>
+											<Form>
+												<fieldset>
+													<input
+														placeholder="Screen Name"
+														type="text"
+														name="screenName"
+														value={this.state.screenName}
+														onChange={this.saveToState}
+														onChange={this.saveToState}
+													/>
+													<input placeholder="Avatar" type="avatar" />
+													<Button>Update</Button>
+												</fieldset>
+											</Form>
+										</FormWrapper>
+									</Wrapper>
+								</Portal>
+					);
+				}
+			}
+		</Mutation>
 		)
 	}
-
 }
 
 export default Account;
