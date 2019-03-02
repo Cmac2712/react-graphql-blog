@@ -9,6 +9,8 @@ const CURRENT_USER_QUERY = gql`
 			id
 			email
 			name
+			screenName
+			avatar
 			}
 		}
 `;

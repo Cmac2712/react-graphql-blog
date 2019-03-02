@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledPosts = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+//	justify-content: space-between;
 	list-style-type: none;
 	padding: ${props => props.theme.spacingUnit};
 	margin: 0;
@@ -11,14 +11,12 @@ const StyledPosts = styled.ul`
 
 const StyledPost = styled.li`
 	display: flex;
-	flex-wrap: wrap;
 	align-items: flex-start;
 	flex-basis: 100%;
 	position: relative;
-	flex-direction: column;
 	background-color: #fefefe;
 	margin: 0;	
-	margin-bottom: 3%;
+	margin-bottom: 2%;
 	border-radius: 4px;
 	${props => props.theme.boxShadow};
 
@@ -28,6 +26,11 @@ const StyledPost = styled.li`
 
 	@media (min-width: ${props => props.theme.breakpoints.laptop}px) {
 		flex-basis: 23%;
+		margin-right: 2%;
+	}
+
+	&:nth-child(4) {
+		margin-right: 0;
 	}
 
 	h4 {
@@ -35,23 +38,41 @@ const StyledPost = styled.li`
 	}
 
 	.text {
+		display: flex;
+		flex-wrap: wrap;
 		padding: ${props => props.theme.spacingUnitHalf};
 	}
 
 	a {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		color: ${props => props.theme.baseText};
 		width: 100%;
 	}
 
+	.text p {
+		flex-basis: 100%;
+	}
+
+	.thumbnail {
+		flex-basis: 100%;
+	}
+
 	.author {
+		flex-basis: 80%;
 		margin-top: ${props => props.theme.spacingUnit};
 		font-size: ${props => props.theme.smallFontSize}px;
 	}
 
 	.author strong {
 		font-style: italic;
+	}
+
+	.styled-avatar  {
+		flex-basis: 10%;
+		margin-bottom: -7px;
+		margin-left: 12px;
+		margin-right: 6px;
 	}
 `; 	
 

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
 import FloatingLabel, {
 	floatingStyles,
 	focusStyles,
@@ -16,6 +17,8 @@ const theme = {
 	warn: '#aa2222', 
 	spacingUnit: '25px',  
 	spacingUnitHalf: '12.5px', 
+	spacingUnitDouble: '50px',  
+	spacingUnitTriple: '100px',  
 	wrapperWidth: '1280px', 
 	boxShadow: 'box-shadow: 2px 3px 0 rgba(0, 0, 0, .1);', 
 	breakpoints: {
@@ -64,7 +67,7 @@ const inputStyle = {
 	}
 }
 
-const BaseStyles = styled.div`
+const GlobalStyle = createGlobalStyle`
 
 	color: ${props => props.theme.baseText};
 
@@ -86,6 +89,9 @@ const BaseStyles = styled.div`
 `; 
 
 const Wrapper = styled.div`
+
+	${props => props.twoColumn && 'float: left;'};
+
 	margin: 0 auto;
 	max-width: ${props => props.theme.wrapperWidth};
 `;
@@ -114,6 +120,7 @@ const Form = styled.form`
 
 	fieldset {
 		max-width: 100%;
+		padding: 0;
 	}
 
 	input, 
@@ -133,9 +140,6 @@ const Form = styled.form`
 		position: relative;
 		border: none;
 	}
-
-
-
 `;
 
 const Button = styled.button`
@@ -147,4 +151,4 @@ const Button = styled.button`
 `;
 
 export default theme;
-export { BaseStyles, Wrapper, FormWrapper, Form, Button, inputStyle };
+export { GlobalStyle, Wrapper, FormWrapper, Form, Button, inputStyle };

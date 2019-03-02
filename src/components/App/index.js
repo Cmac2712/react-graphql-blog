@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from  'react-apollo';
 import { endpoint } from '../../config';
-import theme, { BaseStyles } from './Theme'
+import theme, { GlobalStyle } from './Theme'
 import { ThemeProvider } from 'styled-components';
 import gql from 'graphql-tag';
 import Nav from '../Nav';
@@ -34,8 +34,9 @@ class App extends Component {
 			<ApolloProvider client={client}>
 				<Router>
 					<ThemeProvider theme={theme}>
-						<BaseStyles>
-							<Nav/>
+						<>
+						<GlobalStyle/>
+						<Nav/>
 							<Switch>
 								<Route exact path={`/`} component={Posts} />
 								<Route exact path={`/cms`} component={Cms} />
@@ -44,10 +45,10 @@ class App extends Component {
 								<Route path={`/update`} component={UpdatePost} />
 								<Route path={`/single`} component={SinglePost} />
 							</Switch>
-						</BaseStyles>
-					</ThemeProvider>
-				</Router>
-			</ApolloProvider>
+						</>
+			</ThemeProvider>
+		</Router>
+	</ApolloProvider>
 		);
 	}
 }

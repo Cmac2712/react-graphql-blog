@@ -8,7 +8,7 @@ const StyledSidebar = styled.nav`
 	max-width: 15vw;
 	width: 100%;
 	padding: ${props => props.theme.spacingUnit} 0;
-	padding-top: 110px;
+	padding-top: 0;
 	border-right: 1px solid #ddd;
 	position: relative;
 	z-index: 999;
@@ -26,6 +26,11 @@ const StyledSidebar = styled.nav`
 	button {
 		margin-top: ${props => props.theme.spacingUnitHalf};
 	}
+
+	+ Wrapper {
+		border: 1px red solid;
+	}
+
 `;
 
 export { StyledSidebar };

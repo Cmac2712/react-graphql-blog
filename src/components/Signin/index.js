@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import FloatingLabel from 'floating-label-react'
+import FloatingLabel from 'floating-label-react';
 import User, { CURRENT_USER_QUERY } from '../User';
 import Loading from '../Loading';
 import Signout from '../Signout';

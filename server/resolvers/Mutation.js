@@ -190,6 +190,8 @@ const mutations = {
 	},
 	async updateUserInfo(parent, args, ctx, info) {
 
+		console.log(args);
+
 		if (!ctx.request.userId) {
 			throw new Error('You are not logged in!');
 		}
@@ -197,11 +199,13 @@ const mutations = {
 		const userId = ctx.request.userId;
 
 		const screenName = args.screenName;
+		const avatar = args.avatar;
 
 		const user = await ctx.prisma.mutation.updateUser({
 			where: { id: userId }, 
 			data: {
-				screenName
+				screenName, 
+				avatar
 			}
 		}, info);			
 

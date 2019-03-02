@@ -16,6 +16,7 @@ const ALL_POSTS_QUERY = gql`
 			user {
 				name
 				screenName
+				avatar
 			}
 		}
 	}

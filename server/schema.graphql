@@ -4,6 +4,7 @@ type User {
   name: String!
   email: String!
 	screenName: String
+	avatar: String
 } 
 
 type SuccessMessage {
