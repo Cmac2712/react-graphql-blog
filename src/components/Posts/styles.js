@@ -39,7 +39,6 @@ const StyledPost = styled.li`
 		display: flex;
 		flex-wrap: wrap;
 		padding-top: ${props => props.theme.spacingUnitHalf};
-	//	padding: ${props => props.theme.spacingUnitHalf};
 	}
 
 	a {
