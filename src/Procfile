@@ -1,1 +1,1 @@
-client: npm run client
+client: cd .. && npm run client

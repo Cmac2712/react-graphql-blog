@@ -1,1 +1,1 @@
-api: npm run server
+api: cd .. && npm run server
