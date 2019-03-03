@@ -11,6 +11,9 @@ const Sidebar = props => (
 		<Link to={`/account`}>
 			Account
 		</Link>
+		<Link to={`/myposts`}>
+			My Posts
+		</Link>
 		<Signout/>
 	</StyledSidebar>
 );

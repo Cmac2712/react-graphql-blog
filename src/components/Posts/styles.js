@@ -14,11 +14,8 @@ const StyledPost = styled.li`
 	align-items: flex-start;
 	flex-basis: 100%;
 	position: relative;
-	background-color: #fefefe;
 	margin: 0;	
 	margin-bottom: 2%;
-	border-radius: 4px;
-	${props => props.theme.boxShadow};
 
 	@media (min-width: ${props => props.theme.breakpoints.mobile}px) {
 		flex-basis: 48%;
@@ -35,12 +32,14 @@ const StyledPost = styled.li`
 
 	h4 {
 		font-size: 25px;
+		margin-bottom: 0;
 	}
 
 	.text {
 		display: flex;
 		flex-wrap: wrap;
-		padding: ${props => props.theme.spacingUnitHalf};
+		padding-top: ${props => props.theme.spacingUnitHalf};
+	//	padding: ${props => props.theme.spacingUnitHalf};
 	}
 
 	a {
@@ -60,7 +59,7 @@ const StyledPost = styled.li`
 
 	.author {
 		flex-basis: 80%;
-		margin-top: ${props => props.theme.spacingUnit};
+		//margin-top: ${props => props.theme.spacingUnit};
 		font-size: ${props => props.theme.smallFontSize}px;
 	}
 

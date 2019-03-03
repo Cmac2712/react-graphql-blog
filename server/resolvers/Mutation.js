@@ -190,8 +190,6 @@ const mutations = {
 	},
 	async updateUserInfo(parent, args, ctx, info) {
 
-		console.log(args);
-
 		if (!ctx.request.userId) {
 			throw new Error('You are not logged in!');
 		}

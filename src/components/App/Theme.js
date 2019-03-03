@@ -16,6 +16,7 @@ const theme = {
 	smallFontSize: 12, 
 	warn: '#aa2222', 
 	spacingUnit: '25px',  
+	spacingUnitQuarter: '6px', 
 	spacingUnitHalf: '12.5px', 
 	spacingUnitDouble: '50px',  
 	spacingUnitTriple: '100px',  
@@ -46,16 +47,14 @@ const inputStyle = {
 		padding: `0 ${theme.spacingUnitHalf}`, 
 		top: '15px', 
 		display: 'inline-block', 
-		backgroundColor: `#eee`
+		backgroundColor: `#fff`
 	}, 
 	input: {
 		...inputStyles,
 		border: `1px #ddd solid`, 
 		borderColor: `#ddd`, 
-		backgroundColor: '#f6f6f6', 
 		display: 'block', 
 		padding: `${theme.spacingUnitHalf} ${theme.spacingUnitHalf}`, 
-		backgroundColor: `#eee`, 
 		color: `${theme.baseText}`
 	},
 	label: {
@@ -76,14 +75,18 @@ const GlobalStyle = createGlobalStyle`
 	h3, 
 	h4, 
 	h4 {
+		color: #333;
 		margin-top: 0;
-		margin-bottom: ${props => props.theme.spacingUnitHalf};
-		color: ${props => props.theme.brandColor};
+		margin-bottom: ${props => props.theme.spacingUnitQuarter};
 	}
 
 	a {
 		color: ${props => props.theme.brandColor};
 		text-decoration: none;
+	}
+
+	body {
+		color: ${props => props.theme.baseText};
 	}
 
 `; 
@@ -127,7 +130,6 @@ const Form = styled.form`
 	textarea{
 		display: block;
 		border: 0;
-		background-color: #f6f6f6;
 		border-radius: 4px;
 		padding: ${props => props.theme.spacingUnitHalf} ${props => props.theme.spacingUnit};
 

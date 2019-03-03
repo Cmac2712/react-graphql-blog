@@ -10,6 +10,19 @@ const queries = {
 			where: { id: ctx.request.userId }
 		}, info);
 	},
+	async postsByAuthor(parent, args, ctx, info) {
+		const userId = ctx.request.userId;	
+		
+		const query = await ctx.prisma.query.posts({
+			where: {
+				user: {
+					id: userId
+				}
+			}
+		}, info);
+
+		return query;
+	}, 
 	posts: forwardTo('prisma'), 
 	post: forwardTo('prisma')
 }

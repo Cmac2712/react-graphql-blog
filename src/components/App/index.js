@@ -10,6 +10,7 @@ import Posts from '../Posts';
 import CreatePost from '../CreatePost';
 import UpdatePost from '../UpdatePost';
 import SinglePost from '../SinglePost';
+import MyPosts from '../MyPosts';
 import Account from '../Account';
 import Reset from '../Reset';
 import Cms from '../Cms';
@@ -42,8 +43,9 @@ class App extends Component {
 								<Route exact path={`/cms`} component={Cms} />
 								<Route exact path={`/account`} component={Account} />
 								<Route path={`/reset`} component={Reset} />
-								<Route path={`/update`} component={UpdatePost} />
+								<Route path={`/update-post`} component={UpdatePost} />
 								<Route path={`/single`} component={SinglePost} />
+								<Route path={`/myposts`} component={MyPosts} />
 							</Switch>
 						</>
 			</ThemeProvider>
