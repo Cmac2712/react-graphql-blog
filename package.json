@@ -36,7 +36,7 @@
     "enzyme-to-json": "^3.3.4"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"npm run server\"",
+    "start": "concurrently \"PORT=3006 react-scripts start\" \"npm run server\"",
     "server": "nodemon server/app -e js,graphql -x node --inspect server/app.js",
     "build": "react-scripts build",
     "deploy": "cd server && prisma deploy --env-file ./variables.env",
