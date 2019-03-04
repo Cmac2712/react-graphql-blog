@@ -12,6 +12,8 @@ import FloatingLabel, {
 const theme = {
 	baseText: '#666', 
 	brandColor: '#00aa9c', 
+	baseFont: '"Open Sans", sans-serif', 
+	headerFont: '"Alegreya", serif', 
 	baseFontSize: 16, 
 	smallFontSize: 12, 
 	warn: '#aa2222', 
@@ -71,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
 	h3, 
 	h4, 
 	h4 {
-		font-family: 'Alegreya', serif;
+		font-family: ${props => props.theme.headerFont};
 		color: #444;
 		margin-top: 0;
 		margin-bottom: ${props => (props.theme.spacingUnit/4)}px;
@@ -84,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		color: ${props => props.theme.baseText};
-		font: ${props => props.theme.baseFontSize}px/2 'Open Sans', sans-serif;
+		font: ${props => props.theme.baseFontSize}px/2 ${props => props.theme.baseFont}, sans-serif;
 		background-color: #fdfdfd;
 	}
 

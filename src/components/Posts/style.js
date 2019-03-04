@@ -22,10 +22,10 @@ const StyledPost = styled.li`
 
 	@media (min-width: ${props => props.theme.breakpoints.laptop}px) {
 		flex-basis: 28%;
-		margin-right: 5%;
+		margin-right: 8%;
 	}
 
-	&:nth-child(3) {
+	&:nth-child(3n) {
 		margin-right: 0;
 	}
 

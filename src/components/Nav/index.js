@@ -6,7 +6,12 @@ import NavBar from './styles';
 
 const Nav = props => (
 		<NavBar>
-			<h1 className="logo">React GraphQl Blog</h1>
+			<Link
+				className="logo"
+				to={`/`}
+			>
+				React GraphQl Blog
+			</Link>
 			<User>
 				{
 					({data, loading}) => {
@@ -14,9 +19,6 @@ const Nav = props => (
 						if (data && data.me) {
 							return (
 								<>
-								<Link to={`/`}>
-									Home
-								</Link>
 								<Link to={`/cms`}>
 									Dashboard
 								</Link>
