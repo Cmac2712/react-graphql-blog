@@ -9,6 +9,7 @@ const StyledPost = styled.div`
 		background-position: 50%;
 		width: 100%;
 		padding-bottom: 33%;
+		margin-bottom: ${props => props.theme.spacingUnit}px;
 	}
 `;
 

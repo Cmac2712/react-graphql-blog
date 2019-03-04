@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DeletePost from '../DeletePost';
+import { fallBackImage } from '../../config.js';
 import Author from '../Author';
 import Avatar from '../Avatar';
 
@@ -13,8 +14,9 @@ const Post = ({ post, id, clip }) => (
 			<Thumbnail
 			className="thumbnail"
 			style={{
-				backgroundImage: `url("${post.thumbnail}")`  
-			}}/>
+				backgroundImage: `url("${post.thumbnail || fallBackImage}")`  
+			}}
+			/>
 			<div className="text">
 				<h4>{post.title}</h4>
 				<p>{clip(post.content)}</p>

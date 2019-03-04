@@ -71,9 +71,10 @@ const GlobalStyle = createGlobalStyle`
 	h3, 
 	h4, 
 	h4 {
-		color: #333;
+		font-family: 'Alegreya', serif;
+		color: #444;
 		margin-top: 0;
-		margin-bottom: ${props => (props.theme.spacingUnit/4)};
+		margin-bottom: ${props => (props.theme.spacingUnit/4)}px;
 	}
 
 	a {
@@ -83,6 +84,8 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		color: ${props => props.theme.baseText};
+		font: ${props => props.theme.baseFontSize}px/2 'Open Sans', sans-serif;
+		background-color: #fdfdfd;
 	}
 
 `; 

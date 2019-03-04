@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledPosts = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
-//	justify-content: space-between;
 	list-style-type: none;
 	padding: ${props => props.theme.spacingUnit}px;
 	margin: 0;
@@ -22,11 +21,11 @@ const StyledPost = styled.li`
 	}
 
 	@media (min-width: ${props => props.theme.breakpoints.laptop}px) {
-		flex-basis: 23%;
-		margin-right: 2%;
+		flex-basis: 28%;
+		margin-right: 5%;
 	}
 
-	&:nth-child(4) {
+	&:nth-child(3) {
 		margin-right: 0;
 	}
 

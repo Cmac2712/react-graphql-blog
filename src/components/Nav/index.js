@@ -6,6 +6,7 @@ import NavBar from './styles';
 
 const Nav = props => (
 		<NavBar>
+			<h1 className="logo">React GraphQl Blog</h1>
 			<User>
 				{
 					({data, loading}) => {

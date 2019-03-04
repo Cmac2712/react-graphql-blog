@@ -17,7 +17,7 @@ import Cms from '../Cms';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const client = new ApolloClient({
-	uri: process.env.NODE_ENV === 'local' ? endpoint : productionEndpoint,
+	uri: process.env.NODE_ENV === 'local' ? endpoint : endpoint,
 	request: operation => {
 		operation.setContext({
 			fetchOptions: {
