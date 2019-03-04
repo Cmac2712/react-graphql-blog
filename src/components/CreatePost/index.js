@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import { ALL_POSTS_QUERY } from '../Posts'; 
 import { Wrapper, Form, Button } from '../App/Theme';
-import { CreatePostForm } from './styles';
+import { CreatePostForm } from './style';
 
 // TODO: Add floating labels
 

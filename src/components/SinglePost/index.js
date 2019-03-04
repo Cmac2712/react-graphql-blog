@@ -4,6 +4,8 @@ import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import User from '../User';
 import { Wrapper } from '../App/Theme';
+import { StyledPost } from './style';
+import Author from '../Author';
 
 const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {
@@ -14,6 +16,8 @@ const SINGLE_POST_QUERY = gql`
 		thumbnail
 		user {
 			name
+			screenName
+			avatar
 		}
 	}
   }
@@ -37,12 +41,21 @@ class SinglePost extends Component {
 
 					return (
 						<Wrapper>
-							<div>
-								<img src={post.thumbnail} />
+							<StyledPost>
+								<div className="post__headImage"
+											style={{
+												backgroundImage: `url(${post.thumbnail})`
+											}}
+								>
+								</div>
 								<h1>{post.title}</h1>
 								<p>{post.content}</p>
-								<p>{post.user.name}</p>
-							</div>
+								<Author
+									name={post.user.name}
+									screenName={post.user.screenName}
+									avatar={post.user.avatar}
+								/>
+							</StyledPost>
 						</Wrapper>
 					)
 				}}

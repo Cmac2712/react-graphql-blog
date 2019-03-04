@@ -15,11 +15,7 @@ const theme = {
 	baseFontSize: 16, 
 	smallFontSize: 12, 
 	warn: '#aa2222', 
-	spacingUnit: '25px',  
-	spacingUnitQuarter: '6px', 
-	spacingUnitHalf: '12.5px', 
-	spacingUnitDouble: '50px',  
-	spacingUnitTriple: '100px',  
+	spacingUnit: 25,  
 	wrapperWidth: '1280px', 
 	boxShadow: 'box-shadow: 2px 3px 0 rgba(0, 0, 0, .1);', 
 	breakpoints: {
@@ -31,8 +27,8 @@ const theme = {
 const inputStyle = {
 	floating: {
 		...floatingStyles,
-		left: `${theme.spacingUnitHalf}`, 
-		padding: `0 ${theme.spacingUnitHalf}`, 
+		left: `${(theme.spacingUnit/2)}px`, 
+		padding: `0 ${(theme.spacingUnit/2)}px`, 
 		color: `${theme.brandColor}`, 
 		top: '-2px', 
 	},
@@ -43,8 +39,8 @@ const inputStyle = {
 	},
 	span: {
 		...spanStyles, 
-		left: `${theme.spacingUnitHalf}`, 
-		padding: `0 ${theme.spacingUnitHalf}`, 
+		left: `${(theme.spacingUnit/2)}px`, 
+		padding: `0 ${(theme.spacingUnit/2)}px`, 
 		top: '15px', 
 		display: 'inline-block', 
 		backgroundColor: `#fff`
@@ -54,7 +50,7 @@ const inputStyle = {
 		border: `1px #ddd solid`, 
 		borderColor: `#ddd`, 
 		display: 'block', 
-		padding: `${theme.spacingUnitHalf} ${theme.spacingUnitHalf}`, 
+		padding: `${(theme.spacingUnit/2)}px ${(theme.spacingUnit/2)}px`, 
 		color: `${theme.baseText}`
 	},
 	label: {
@@ -62,7 +58,7 @@ const inputStyle = {
 		display: 'block', 
 		color: '#999', 
 		font: 'inherit', 
-		marginBottom: `${theme.spacingUnit}`
+		marginBottom: `${theme.spacingUnit}px`
 	}
 }
 
@@ -77,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
 	h4 {
 		color: #333;
 		margin-top: 0;
-		margin-bottom: ${props => props.theme.spacingUnitQuarter};
+		margin-bottom: ${props => (props.theme.spacingUnit/4)};
 	}
 
 	a {
@@ -131,7 +127,7 @@ const Form = styled.form`
 		display: block;
 		border: 0;
 		border-radius: 4px;
-		padding: ${props => props.theme.spacingUnitHalf} ${props => props.theme.spacingUnit};
+		padding: ${props => (props.theme.spacingUnit/2)}px ${props => (props.theme.spacingUnit/2)}px;
 
 		&::placeholder {
 			color: #999;
@@ -149,7 +145,7 @@ const Button = styled.button`
 	background-color: ${props => props.theme.brandColor};
 	color: #fff;
 	border-radius: 2px;
-	padding: ${props => props.theme.spacingUnitHalf} ${props => props.theme.spacingUnit};
+	padding: ${props => (props.theme.spacingUnit/2)}px ${props => (props.theme.spacingUnit/2)}px;
 `;
 
 export default theme;

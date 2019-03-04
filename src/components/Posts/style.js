@@ -5,7 +5,7 @@ const StyledPosts = styled.ul`
 	flex-wrap: wrap;
 //	justify-content: space-between;
 	list-style-type: none;
-	padding: ${props => props.theme.spacingUnit};
+	padding: ${props => props.theme.spacingUnit}px;
 	margin: 0;
 `;
 
@@ -38,7 +38,7 @@ const StyledPost = styled.li`
 	.text {
 		display: flex;
 		flex-wrap: wrap;
-		padding-top: ${props => props.theme.spacingUnitHalf};
+		padding-top: ${props => (props.theme.spacingUnit/2)}px;
 	}
 
 	a {
@@ -54,16 +54,6 @@ const StyledPost = styled.li`
 
 	.thumbnail {
 		flex-basis: 100%;
-	}
-
-	.author {
-		flex-basis: 80%;
-		//margin-top: ${props => props.theme.spacingUnit};
-		font-size: ${props => props.theme.smallFontSize}px;
-	}
-
-	.author strong {
-		font-style: italic;
 	}
 
 	.styled-avatar  {

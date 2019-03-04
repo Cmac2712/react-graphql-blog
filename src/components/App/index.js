@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from  'react-apollo';
-import { endpoint } from '../../config';
+import { endpoint, productionEndpoint } from '../../config';
 import theme, { GlobalStyle } from './Theme'
 import { ThemeProvider } from 'styled-components';
 import gql from 'graphql-tag';
@@ -17,7 +17,7 @@ import Cms from '../Cms';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const client = new ApolloClient({
-	uri: endpoint,
+	uri: process.env.NODE_ENV === 'development' ? endpoint : productionEndpoint,
 	request: operation => {
 		operation.setContext({
 			fetchOptions: {

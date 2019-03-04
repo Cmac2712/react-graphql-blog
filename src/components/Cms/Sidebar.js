@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Signout from '../Signout';
-import { StyledSidebar } from './styles';
+import { StyledSidebar } from './style';
 
 const Sidebar = props => (
 	<StyledSidebar>

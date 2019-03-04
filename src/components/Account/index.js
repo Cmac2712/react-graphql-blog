@@ -4,8 +4,8 @@ import { Mutation, Query} from 'react-apollo';
 import FloatingLabel from 'floating-label-react';
 import Portal from '../Portal';
 import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
-import { AccountFormWrapper } from './style.js';
 import Sidebar from '../Cms/Sidebar';
+import { AccountFormWrapper } from './style';
 
 // Update User
 const UPDATE_USER_INFO_MUTATION = gql`

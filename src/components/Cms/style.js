@@ -7,7 +7,7 @@ const StyledSidebar = styled.nav`
 	height: 100%;
 	max-width: 15vw;
 	width: 100%;
-	padding: ${props => props.theme.spacingUnit} 0;
+	padding: ${props => props.theme.spacingUnit}px 0;
 	padding-top: 0;
 	border-right: 1px solid #ddd;
 	position: relative;
@@ -15,7 +15,7 @@ const StyledSidebar = styled.nav`
 
 
 	a {
-		padding: ${props => props.theme.spacingUnitHalf};
+		padding: ${props => (props.theme.spacingUnit/2)}px;
 		border-bottom: 1px solid #ddd;
 	}
 
@@ -24,7 +24,7 @@ const StyledSidebar = styled.nav`
 	}
 
 	button {
-		margin-top: ${props => props.theme.spacingUnitHalf};
+		margin-top: ${props => (props.theme.spacingUnit/2)}px;
 	}
 
 	+ Wrapper {

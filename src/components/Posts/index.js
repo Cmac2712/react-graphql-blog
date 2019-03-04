@@ -4,7 +4,7 @@ import { Query } from 'react-apollo';
 import User from '../User';
 import Post from './Post';
 import { Wrapper } from '../App/Theme';
-import { StyledPosts, Thumbnail } from './styles';
+import { StyledPosts, Thumbnail } from './style';
 
 const ALL_POSTS_QUERY = gql`
 	query ALL_POSTS_QUERY {
