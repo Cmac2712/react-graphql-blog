@@ -19,6 +19,7 @@ const theme = {
 	warn: '#aa2222', 
 	spacingUnit: 25,  
 	wrapperWidth: '1280px', 
+	backgroundColor: '#fdfdfd', 
 	boxShadow: 'box-shadow: 2px 3px 0 rgba(0, 0, 0, .1);', 
 	breakpoints: {
 		mobile: 768, 
@@ -45,10 +46,11 @@ const inputStyle = {
 		padding: `0 ${(theme.spacingUnit/2)}px`, 
 		top: '15px', 
 		display: 'inline-block', 
-		backgroundColor: `#fff`
+		backgroundColor: `${theme.backgroundColor}`, 
 	}, 
 	input: {
 		...inputStyles,
+		backgroundColor: `${theme.backgroundColor}`, 
 		border: `1px #ddd solid`, 
 		borderColor: `#ddd`, 
 		display: 'block', 
@@ -87,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		color: ${props => props.theme.baseText};
 		font: ${props => props.theme.baseFontSize}px/2 ${props => props.theme.baseFont}, sans-serif;
-		background-color: #fdfdfd;
+		background-color: ${props => props.theme.backgroundColor};
 	}
 
 `; 
@@ -132,6 +134,7 @@ const Form = styled.form`
 		display: block;
 		border: 0;
 		border-radius: 4px;
+		line-height: 1.5;
 		padding: ${props => (props.theme.spacingUnit/2)}px ${props => (props.theme.spacingUnit/2)}px;
 
 		&::placeholder {
