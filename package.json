@@ -37,11 +37,11 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"npm run server\"",
-    "dev": " concurrently \"react-scripts start\" \"npm run server\"",
 		"client": "react-scripts start", 
     "server": "nodemon server/app -e js,graphql -x node --inspect server/app.js",
     "build": "react-scripts build",
-    "deploy": "cd server && prisma deploy --env-file ./variables.env",
+    "deploy-prisma": "cd server && prisma deploy --env-file ./variables.env",
+    "deploy": "git push heroku master && git push heroku-api",
     "test": "react-scripts test"
   },
   "devDependencies": {
