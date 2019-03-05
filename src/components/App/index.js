@@ -15,9 +15,10 @@ import Account from '../Account';
 import Reset from '../Reset';
 import Cms from '../Cms';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from '../Footer';
 
 const client = new ApolloClient({
-	uri: process.env.NODE_ENV === 'local' ? endpoint : productionEndpoint,
+	uri: process.env.NODE_ENV === 'local' ? endpoint : endpoint,
 	request: operation => {
 		operation.setContext({
 			fetchOptions: {
@@ -33,24 +34,22 @@ class App extends Component {
 	render() {
 		return (
 			<ApolloProvider client={client}>
-				<Router>
-					<ThemeProvider theme={theme}>
-						<>
+				<ThemeProvider theme={theme}>
+					<>
 						<GlobalStyle/>
-						<Nav/>
-							<Switch>
-								<Route exact path={`/`} component={Posts} />
-								<Route exact path={`/cms`} component={Cms} />
-								<Route exact path={`/account`} component={Account} />
-								<Route path={`/reset`} component={Reset} />
-								<Route path={`/update-post`} component={UpdatePost} />
-								<Route path={`/single`} component={SinglePost} />
-								<Route path={`/myposts`} component={MyPosts} />
-							</Switch>
-						</>
-			</ThemeProvider>
-		</Router>
-	</ApolloProvider>
+						<Router>
+							<>
+							<Nav/>
+							<Route exact path={`/`} component={Posts} />
+							<Route  path={`/cms`} component={Cms} />
+							<Route path={`/reset`} component={Reset} />
+							<Route path={`/single`} component={SinglePost} />
+							</>
+						</Router>
+						<Footer/>
+					</>
+				</ThemeProvider>
+			</ApolloProvider>
 		);
 	}
 }
