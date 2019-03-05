@@ -6,6 +6,7 @@ import User from '../User';
 import { Wrapper } from '../App/Theme';
 import { StyledPost } from './style';
 import Author from '../Author';
+import Loading from '../Loading';
 
 const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {
@@ -31,16 +32,18 @@ class SinglePost extends Component {
 
 	render() {
 		return (
+			<Wrapper
+				className="min-height"
+			>
 			<Query
 				query={SINGLE_POST_QUERY}
 				variables={this.state}
 			>
 				{({data: { post }, loading}) => {
 
-					if (loading) return <p>Loading...</p>;
+					if (loading) return <Loading/>;
 
 					return (
-						<Wrapper>
 							<StyledPost>
 								<div className="post__headImage"
 											style={{
@@ -56,10 +59,10 @@ class SinglePost extends Component {
 									avatar={post.user.avatar}
 								/>
 							</StyledPost>
-						</Wrapper>
 					)
 				}}
 			</Query>
+						</Wrapper>
 		)
 	}
 }

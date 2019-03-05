@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
+import Loading from '../Loading';
 import { Mutation } from 'react-apollo';
 import { ALL_POSTS_QUERY } from '../Posts'; 
-import { Wrapper, Form, Button } from '../App/Theme';
 import { CreatePostForm } from './style';
+import { Wrapper, FormWrapper, Form, Button } from '../App/Theme';
 
 // TODO: Add floating labels
 
@@ -76,48 +77,49 @@ class CreatePost extends Component {
 				{
 					(createPost, { loading, error }) => {
 
-						if (loading) return <p>posting...</p>
-
 						return (
-						<CreatePostForm
-							className="cms-section"
-							disabled={this.state.publishing}
-							onSubmit={async e => {
-								e.preventDefault();
-								this.setState({ uploading: true });
-								const thumbnail = await this.uploadImage(e);
-								const { data } = await createPost();
+							<FormWrapper>
+								{ loading && <Loading/> }
+								<CreatePostForm
+									className="cms-section"
+									disabled={this.state.publishing}
+									onSubmit={async e => {
+										e.preventDefault();
+										this.setState({ uploading: true });
+										const thumbnail = await this.uploadImage(e);
+										const { data } = await createPost();
 
-								this.setState({ uploading: false });
+										this.setState({ uploading: false });
 
-									this.props.history.push(`/single?postId=${data.createPost.id}`)
-								}}
-							>
-								<fieldset>
-								<h1>Create Post</h1>
-								<input
-									type="text"
-									name="title"
-									placeholder={`Title`}
-									value={this.state.title}
-									onChange={this.saveToState}
-								/>
-								<textarea
-									id="content"
-									name="content"
-									rows="10"
-									placeholder={`Write your post here...`}
-									value={this.state.content}
-									onChange={this.saveToState}
-								/>
-								<input
-									type="file"
-									name="file"
-									onChange={this.handleFile}
-								/>
-								<Button>Publish{this.state.uploading && 'ing'}</Button>
-							</fieldset>
-						</CreatePostForm>
+											this.props.history.push(`/single?postId=${data.createPost.id}`)
+										}}
+									>
+										<fieldset>
+										<h1>Create Post</h1>
+										<input
+											type="text"
+											name="title"
+											placeholder={`Title`}
+											value={this.state.title}
+											onChange={this.saveToState}
+										/>
+										<textarea
+											id="content"
+											name="content"
+											rows="10"
+											placeholder={`Write your post here...`}
+											value={this.state.content}
+											onChange={this.saveToState}
+										/>
+										<input
+											type="file"
+											name="file"
+											onChange={this.handleFile}
+										/>
+										<Button>Publish{this.state.uploading && 'ing'}</Button>
+									</fieldset>
+								</CreatePostForm>
+							</FormWrapper>
 						)
 					}
 				}

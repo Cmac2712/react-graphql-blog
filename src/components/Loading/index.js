@@ -1,17 +1,23 @@
 import React, { Component } from 'react'; 
-import ReactSVG from 'react-svg'
+import ReactSVG from 'react-svg';
+import StyledLoading from './style';
 
 const Loading = props => (
-	<ReactSVG
-		src="./images/LoadingIcon.svg"
-		wrapper="span"
-		onInjected={(error) => {
-			console.log({error});
-			return;
-		}}
-		svgClassName="loading-icon"
-		svgStyle={{width: 50}}
-	/>
+	<StyledLoading>
+		<ReactSVG
+			src="/images/LoadingIcon.svg"
+			wrapper="span"
+			onInjected={(error) => {
+				console.log({error});
+				return;
+			}}
+			svgClassName="loading-icon"
+			svgStyle={{
+				height: 50, 
+				width: 50
+			}}
+		/>
+	</StyledLoading>
 );
 
 export default Loading;

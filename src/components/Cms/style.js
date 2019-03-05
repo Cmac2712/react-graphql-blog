@@ -4,6 +4,7 @@ const CmsPage = styled.div`
 	display: flex;
 
 	.cms-section {
+		position: relative;
 		margin-left: ${props => props.theme.spacingUnit}px;
 	}
 `;

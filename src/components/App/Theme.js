@@ -94,6 +94,10 @@ const GlobalStyle = createGlobalStyle`
 		background-color: ${props => props.theme.backgroundColor};
 	}
 
+	.min-height {
+		min-height: 50vh;
+	}
+	
 `; 
 
 const Wrapper = styled.div`

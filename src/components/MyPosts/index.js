@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../Cms/Sidebar';
 import DeletePost from '../DeletePost';
+import Loading from '../Loading';
 import { CmsPage } from './style';
 import { Wrapper } from '../App/Theme';
 import { Query } from 'react-apollo';
@@ -33,7 +34,9 @@ class MyPosts extends Component {
 			{
 				({data: {postsByAuthor}, loading, error}) => {
 
-					if (loading) return <p>Loading posts...</p>
+					if (loading) return <Loading/>;
+
+					if (!postsByAuthor.length) return <p>No posts yet :(</p>
 
 					return (
 						<AuthorPosts>

@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import User from '../User';
 import Post from './Post';
+import Loading from '../Loading';
 import { Wrapper } from '../App/Theme';
 import { StyledPosts, Thumbnail } from './style';
 
@@ -38,7 +39,7 @@ class Posts extends Component {
 						{
 							({data: {posts}, loading, error}) => {
 
-								if (loading) return <p>loading...</p>;
+								if (loading) return <Loading/>
 
 								return posts.map(post => (
 									<Post post={post} clip={this.clip} />

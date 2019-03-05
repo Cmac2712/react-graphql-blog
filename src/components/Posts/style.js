@@ -6,6 +6,7 @@ const StyledPosts = styled.ul`
 	list-style-type: none;
 	padding: ${props => props.theme.spacingUnit}px;
 	margin: 0;
+	min-height: 50vh;
 `;
 
 const StyledPost = styled.li`

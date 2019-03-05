@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import User from '../User';
+import Loading from '../Loading';
 import { Form, Button } from '../App/Theme';
 import { SINGLE_POST_QUERY } from '../SinglePost';
 
@@ -43,7 +44,7 @@ class UpdatePost extends Component {
 			>
 				{({data, loading}) => {
 
-					if (loading) return <p>Loading...</p>;
+					if (loading) return <Loading/>;
 
 					return (
 						<Mutation

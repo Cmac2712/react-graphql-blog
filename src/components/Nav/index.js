@@ -18,14 +18,14 @@ const Nav = props => (
 
 						if (data && data.me) {
 							return (
-								<Link to={`/cms`}>
+								<Link to={`/cms/create-post`}>
 									Dashboard
 								</Link>
 							)
 						}
 
 						return (
-								<Link to={`/cms`}>
+								<Link to={`/cms/create-post`}>
 									Log In / Create an Account
 								</Link>
 						)

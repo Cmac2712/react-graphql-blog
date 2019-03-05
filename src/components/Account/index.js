@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Mutation, Query} from 'react-apollo';
 import FloatingLabel from 'floating-label-react';
 import Portal from '../Portal';
+import Loading from '../Loading';
 import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
 import Sidebar from '../Cms/Sidebar';
 import { AccountFormWrapper } from './style.js';
@@ -47,19 +48,19 @@ class Account extends Component {
 		if (!file) return;
 
 		data.append('file', file);
-    data.append('upload_preset', 'sickfits');
+		data.append('upload_preset', 'sickfits');
 
-    const res = await fetch('https://api.cloudinary.com/v1_1/cmacintyre/image/upload',
-		{
-      method: 'POST',
-      body: data,
-    });
+		const res = await fetch('https://api.cloudinary.com/v1_1/cmacintyre/image/upload',
+			{
+				method: 'POST',
+				body: data,
+			});
 
-    const avatar = await res.json();
+		const avatar = await res.json();
 
-    this.setState({
-      avatar: avatar.secure_url,
-    });
+		this.setState({
+			avatar: avatar.secure_url,
+		});
 
 		return avatar;
 	};
@@ -83,7 +84,7 @@ class Account extends Component {
 		if (avatarHasChanged) {
 			const avatar = await this.uploadImage();
 		}
-	
+
 		if (screenNameHasChanged) {
 			const userInfo = await updateUserInfo();
 			refetch();
@@ -94,57 +95,60 @@ class Account extends Component {
 
 	render() {
 		return (
-			<Query
-				query={USER_INFO_QUERY}
+			<AccountFormWrapper
+				className="cms-section min-height"
 			>
-			{
-				({ data, loading, refetch } ) => {
+				<Query
+					query={USER_INFO_QUERY}
+				>
+					{
+						({ data, loading, refetch } ) => {
 
-					console.log(data);
+							console.log(data);
 
-					if (loading) return <p>Loading...</p>;
+							if (loading) return <Loading/>;
 
-					if (this.state.loading) return <p>also loading...</p>
+							if (this.state.loading) return <Loading/>;
 
-					return (
-						<Mutation
-							mutation={UPDATE_USER_INFO_MUTATION}
-							variables={this.state}
-						>
-							{
-								(updateUserInfo, loading, error) => {
-									return (
-														<AccountFormWrapper
-																className="cms-section"
-																onSubmit={e => {
-																		e.preventDefault();
-																		this.handleSubmit(updateUserInfo, refetch)
-																	}}
-														>
-															<h1>Account Details</h1>
-															<Form>
-																<fieldset>
-																	<input
-																		placeholder="Screen Name"
-																		type="text"
-																		name="screenName"
-																		styles={inputStyle}
-																		defaultValue={data.me.screenName}
-																		onChange={this.saveToState}
-																	/>
-																	<Button>Update</Button>
-																</fieldset>
-															</Form>
-														</AccountFormWrapper>
-									);
-								}
-							}
-						</Mutation>
-					)
-				}
-			}
-			</Query>
+							return (
+								<Mutation
+									mutation={UPDATE_USER_INFO_MUTATION}
+									variables={this.state}
+								>
+									{
+										(updateUserInfo, loading, error) => {
+											return (
+												<>
+												<h1>Account Details</h1>
+												<Form
+													onSubmit={e => {
+														e.preventDefault();
+														this.handleSubmit(updateUserInfo, refetch)
+													}}
+												>
+													<fieldset>
+														<input
+															placeholder="Screen Name"
+															type="text"
+															name="screenName"
+															styles={inputStyle}
+															defaultValue={data.me.screenName}
+															onChange={this.saveToState}
+														/>
+														<Button>Update</Button>
+													</fieldset>
+												</Form>
+												</>
+											);
+										}
+									}
+								</Mutation>
+							)
+						}
+					}
+				</Query>
 
+			</AccountFormWrapper>
 		)
 	}
 }
