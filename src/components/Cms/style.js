@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
+const CmsPage = styled.div`
+	display: flex;
+
+	.cms-section {
+		margin-left: ${props => props.theme.spacingUnit}px;
+	}
+`;
+
 const StyledSidebar = styled.nav`
-	float: left;
 	display: flex;	
 	flex-direction: column;
 	height: 100%;
@@ -27,10 +34,7 @@ const StyledSidebar = styled.nav`
 		margin-top: ${props => (props.theme.spacingUnit/2)}px;
 	}
 
-	+ Wrapper {
-		border: 1px red solid;
-	}
-
 `;
 
-export { StyledSidebar };
+
+export { StyledSidebar, CmsPage };

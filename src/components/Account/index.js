@@ -5,7 +5,7 @@ import FloatingLabel from 'floating-label-react';
 import Portal from '../Portal';
 import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
 import Sidebar from '../Cms/Sidebar';
-import { AccountFormWrapper } from './style';
+import { AccountFormWrapper } from './style.js';
 
 // Update User
 const UPDATE_USER_INFO_MUTATION = gql`
@@ -114,12 +114,8 @@ class Account extends Component {
 							{
 								(updateUserInfo, loading, error) => {
 									return (
-												<Portal>
-													<Sidebar/>
-													<Wrapper
-														twoColumn
-													>
 														<AccountFormWrapper
+																className="cms-section"
 																onSubmit={e => {
 																		e.preventDefault();
 																		this.handleSubmit(updateUserInfo, refetch)
@@ -128,7 +124,7 @@ class Account extends Component {
 															<h1>Account Details</h1>
 															<Form>
 																<fieldset>
-																	<FloatingLabel
+																	<input
 																		placeholder="Screen Name"
 																		type="text"
 																		name="screenName"
@@ -140,8 +136,6 @@ class Account extends Component {
 																</fieldset>
 															</Form>
 														</AccountFormWrapper>
-													</Wrapper>
-												</Portal>
 									);
 								}
 							}

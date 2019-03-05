@@ -20,6 +20,7 @@ const theme = {
 	spacingUnit: 25,  
 	wrapperWidth: '1280px', 
 	backgroundColor: '#fdfdfd', 
+	uiColorLight: '#ddd', 
 	boxShadow: 'box-shadow: 2px 3px 0 rgba(0, 0, 0, .1);', 
 	breakpoints: {
 		mobile: 768, 
@@ -51,7 +52,7 @@ const inputStyle = {
 	input: {
 		...inputStyles,
 		backgroundColor: `${theme.backgroundColor}`, 
-		border: `1px #ddd solid`, 
+		border: `1px ${theme.uiColorLight} solid`, 
 		borderColor: `#ddd`, 
 		display: 'block', 
 		padding: `${(theme.spacingUnit/2)}px ${(theme.spacingUnit/2)}px`, 
@@ -78,6 +79,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: ${props => props.theme.headerFont};
 		color: #444;
 		margin-top: 0;
+		padding-top: 0;
 		margin-bottom: ${props => (props.theme.spacingUnit/4)}px;
 	}
 
@@ -95,9 +97,6 @@ const GlobalStyle = createGlobalStyle`
 `; 
 
 const Wrapper = styled.div`
-
-	${props => props.twoColumn && 'float: left;'};
-
 	margin: 0 auto;
 	max-width: ${props => props.theme.wrapperWidth};
 `;
@@ -132,10 +131,12 @@ const Form = styled.form`
 	input, 
 	textarea{
 		display: block;
-		border: 0;
 		border-radius: 4px;
 		line-height: 1.5;
 		padding: ${props => (props.theme.spacingUnit/2)}px ${props => (props.theme.spacingUnit/2)}px;
+		margin-bottom: ${props => props.theme.spacingUnit}px;
+		border: 1px solid ${props => props.theme.uiColorLight};
+		width: 100%;
 
 		&::placeholder {
 			color: #999;
@@ -145,6 +146,10 @@ const Form = styled.form`
 	fieldset {
 		position: relative;
 		border: none;
+	}
+
+	button {
+		float: right;
 	}
 `;
 

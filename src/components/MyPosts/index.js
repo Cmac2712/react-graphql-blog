@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../Cms/Sidebar';
+import DeletePost from '../DeletePost';
+import { CmsPage } from './style';
 import { Wrapper } from '../App/Theme';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
@@ -21,11 +23,9 @@ class MyPosts extends Component {
 	render() {
 		return (
 			<>
-			<Sidebar/>
-			<Wrapper
-			twoColumn
+			<AuthorPostsSection
+				className="cms-section"
 			>
-			<AuthorPostsSection>
 			<h1>Your Posts</h1>
 			<Query
 			query={POSTS_BY_AUTHOR}
@@ -39,10 +39,18 @@ class MyPosts extends Component {
 						<AuthorPosts>
 						{ postsByAuthor.map(post => (
 										<li key={post.id}>
-											{post.title}
+											<Link
+												className="link link--single"
+												to={`/single?postId=${post.id}`}>
+												{post.title}
+											</Link>
+											<DeletePost
+												className="link link--delete"
+												id={post.id}
+											/>
 											<Link
 												className="link"
-												to={`/update-post?postId=${post.id}`}>Edit
+												to={`/cms/update-post?postId=${post.id}`}>Edit
 											</Link>
 										</li>
 									)) }
@@ -52,12 +60,11 @@ class MyPosts extends Component {
 					}
 				</Query>
 				</AuthorPostsSection>
-			</Wrapper>
 			</>
 		)
 	}
 
 }
 
-
 export default MyPosts;
+export { POSTS_BY_AUTHOR };

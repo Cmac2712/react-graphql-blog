@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import { ALL_POSTS_QUERY } from '../Posts';
+//import { ALL_POSTS_QUERY } from '../Posts';
+import { POSTS_BY_AUTHOR } from '../MyPosts';
 
 const DELETE_POST_MUTATION = gql`
 	mutation DELETE_POST_MUTATION($id: ID!) {
@@ -15,12 +16,13 @@ const DELETE_POST_MUTATION = gql`
 class DeletePost extends Component {
 
 	updatePosts = (cache, payload) => {
-		const data = cache.readQuery({ query: ALL_POSTS_QUERY })
-		console.log({payload});
+		const data = cache.readQuery({ query: POSTS_BY_AUTHOR })
+		console.log({payload}, {data});
 
-    data.posts = data.posts.filter(post => post.id !== payload.data.deletePost.id);
+    data.postsByAuthor = data.postsByAuthor.filter(post => post.id !== payload.data.deletePost.id);
+		return;
 
-    cache.writeQuery({ query: ALL_POSTS_QUERY, data });
+    cache.writeQuery({ query: POSTS_BY_AUTHOR, data });
 	}
 	
 	render() {
@@ -34,16 +36,18 @@ class DeletePost extends Component {
 				optimisticResponse={{
 					__typename: 'Mutation', 
 					deletePost: {
-						__typename: 'Post', 
-						id: this.props.id
+						id: this.props.id, 
+						__typename: 'Post'
 					}
 				}}
 			>{
 				(deletePost) => (
-					<a href="#" onClick={e => {
+					<a href="#"
+						className={this.props.className}
+						onClick={e => {
 						e.preventDefault();
 						deletePost();
-					}}>Delete Post</a>
+					}}>Delete</a>
 				)
 			}
 			</Mutation>

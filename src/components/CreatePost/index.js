@@ -68,7 +68,6 @@ class CreatePost extends Component {
 
 	render() {
 		return (
-				<Wrapper>
 					<Mutation
 						mutation={CREATE_POST_MUTATION}
 						variables={this.state}
@@ -81,6 +80,7 @@ class CreatePost extends Component {
 
 						return (
 						<CreatePostForm
+							className="cms-section"
 							disabled={this.state.publishing}
 							onSubmit={async e => {
 								e.preventDefault();
@@ -90,10 +90,11 @@ class CreatePost extends Component {
 
 								this.setState({ uploading: false });
 
-								this.props.history.push(`/single?postId=${data.createPost.id}`)
-							}}
-						>
-							<fieldset>
+									this.props.history.push(`/single?postId=${data.createPost.id}`)
+								}}
+							>
+								<fieldset>
+								<h1>Create Post</h1>
 								<input
 									type="text"
 									name="title"
@@ -121,7 +122,6 @@ class CreatePost extends Component {
 					}
 				}
 					</Mutation>
-				</Wrapper>
 		)
 	}
 }

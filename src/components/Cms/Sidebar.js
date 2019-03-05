@@ -5,13 +5,13 @@ import { StyledSidebar } from './style';
 
 const Sidebar = props => (
 	<StyledSidebar>
-		<Link to={`/cms`}>
+		<Link to={`/cms/create-post`}>
 			Create Post
 		</Link>
-		<Link to={`/account`}>
+		<Link to={`/cms/account`}>
 			Account
 		</Link>
-		<Link to={`/myposts`}>
+		<Link to={`/cms/myposts`}>
 			My Posts
 		</Link>
 		<Signout/>

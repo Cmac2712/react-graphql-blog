@@ -18,23 +18,16 @@ const Nav = props => (
 
 						if (data && data.me) {
 							return (
-								<>
 								<Link to={`/cms`}>
 									Dashboard
 								</Link>
-							</>
 							)
 						}
 
 						return (
-							<>
-								<Link to={`/`}>
-									Home
-								</Link>
 								<Link to={`/cms`}>
 									Log In / Create an Account
 								</Link>
-							</>
 						)
 					}
 				}

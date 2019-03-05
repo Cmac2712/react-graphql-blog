@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import User from '../User';
+import { Form, Button } from '../App/Theme';
 import { SINGLE_POST_QUERY } from '../SinglePost';
 
 const UPDATE_POST_MUTATION = gql`
@@ -51,13 +52,15 @@ class UpdatePost extends Component {
 						>
 							{(updatePost, { loading, error }) => {
 								return (
-									<form
+									<Form
+										className="cms-section"
 										onSubmit={e => {
 											e.preventDefault();
 											this.handleSubmit(updatePost);
 										}}
 									>
 										<fieldset>
+											<h1>Update Post</h1>
 											<input
 												type="text"
 												id="title"
@@ -73,9 +76,9 @@ class UpdatePost extends Component {
 												defaultValue={data.post.content}
 												onChange={this.handleChange}
 											/>
-											<button>Submit</button>
+											<Button>Submit</Button>
 										</fieldset>
-									</form>
+									</Form>
 								)
 							}}
 						</Mutation>

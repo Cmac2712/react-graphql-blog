@@ -9,7 +9,25 @@ const StyledFooter = styled.footer`
 	.footer-container {
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 	}
+
+	.github {
+		display: flex;
+		align-items: center;
+		margin-right: auto;
+	}
+
+	.github-icon-container {
+		font-size: 0;
+		height: 18px;
+		width: 18px;
+	}
+
+	.github span:first-child {
+		margin-right: ${props => props.theme.spacingUnit/4}px;
+	}
+
 `;
 
 export default StyledFooter;
