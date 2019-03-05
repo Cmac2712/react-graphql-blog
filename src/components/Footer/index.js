@@ -36,7 +36,7 @@ class Footer extends Component {
 							/>
 						</a>
 						<a href="https://craigmacintyre.co.uk/" className="myname">
-							Craig MacIntyre&nbsp;
+							Craig MacIntyre
 						</a>
 						<div className="year">
 							 { this.getCurrentYear() }

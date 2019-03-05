@@ -1,0 +1,1005 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav/> matches snapshot (logged in) 1`] = `
+Array [
+  <styled.nav
+    data-test={true}
+  >
+    <StyledComponent
+      data-test={true}
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-ifAKCX",
+            "isStatic": false,
+            "lastClassName": "FEnpx",
+            "rules": Array [
+              "
+	display: flex;
+	align-items: center;
+	padding: ",
+              [Function],
+              "px;
+	position: relative;
+	z-index: 5;
+
+	.logo {
+		font-family: ",
+              [Function],
+              ";
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-right: auto;
+		color: ",
+              [Function],
+              ";
+	}
+	
+	a {
+		color: ",
+              [Function],
+              ";
+		padding: 0 ",
+              [Function],
+              "px;
+	}
+",
+            ],
+          },
+          "displayName": "styled.nav",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-ifAKCX",
+          "target": "nav",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <nav
+        className="sc-ifAKCX FEnpx"
+        data-test={true}
+      >
+        <Link
+          className="logo"
+          replace={false}
+          to="/"
+        >
+          <a
+            className="logo"
+            href="/"
+            onClick={[Function]}
+          >
+            React GraphQl Blog
+          </a>
+        </Link>
+        <User>
+          <Query
+            query={
+              Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "me",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "email",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "screenName",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "avatar",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 73,
+                  "start": 0,
+                },
+              }
+            }
+          >
+            <Link
+              replace={false}
+              to="/cms/create-post"
+            >
+              <a
+                href="/cms/create-post"
+                onClick={[Function]}
+              >
+                Log In / Create an Account
+              </a>
+            </Link>
+          </Query>
+        </User>
+      </nav>
+    </StyledComponent>
+  </styled.nav>,
+  <StyledComponent
+    data-test={true}
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-ifAKCX",
+          "isStatic": false,
+          "lastClassName": "FEnpx",
+          "rules": Array [
+            "
+	display: flex;
+	align-items: center;
+	padding: ",
+            [Function],
+            "px;
+	position: relative;
+	z-index: 5;
+
+	.logo {
+		font-family: ",
+            [Function],
+            ";
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-right: auto;
+		color: ",
+            [Function],
+            ";
+	}
+	
+	a {
+		color: ",
+            [Function],
+            ";
+		padding: 0 ",
+            [Function],
+            "px;
+	}
+",
+          ],
+        },
+        "displayName": "styled.nav",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-ifAKCX",
+        "target": "nav",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <nav
+      className="sc-ifAKCX FEnpx"
+      data-test={true}
+    >
+      <Link
+        className="logo"
+        replace={false}
+        to="/"
+      >
+        <a
+          className="logo"
+          href="/"
+          onClick={[Function]}
+        >
+          React GraphQl Blog
+        </a>
+      </Link>
+      <User>
+        <Query
+          query={
+            Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "me",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "email",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "screenName",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "avatar",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 73,
+                "start": 0,
+              },
+            }
+          }
+        >
+          <Link
+            replace={false}
+            to="/cms/create-post"
+          >
+            <a
+              href="/cms/create-post"
+              onClick={[Function]}
+            >
+              Log In / Create an Account
+            </a>
+          </Link>
+        </Query>
+      </User>
+    </nav>
+  </StyledComponent>,
+  <nav
+    className="sc-ifAKCX FEnpx"
+    data-test={true}
+  >
+    <Link
+      className="logo"
+      replace={false}
+      to="/"
+    >
+      <a
+        className="logo"
+        href="/"
+        onClick={[Function]}
+      >
+        React GraphQl Blog
+      </a>
+    </Link>
+    <User>
+      <Query
+        query={
+          Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": undefined,
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "me",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "email",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "screenName",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "avatar",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 73,
+              "start": 0,
+            },
+          }
+        }
+      >
+        <Link
+          replace={false}
+          to="/cms/create-post"
+        >
+          <a
+            href="/cms/create-post"
+            onClick={[Function]}
+          >
+            Log In / Create an Account
+          </a>
+        </Link>
+      </Query>
+    </User>
+  </nav>,
+]
+`;
+
+exports[`<Nav/> matches snapshot (logged out) 1`] = `
+Array [
+  <styled.nav
+    data-test={true}
+  >
+    <StyledComponent
+      data-test={true}
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-ifAKCX",
+            "isStatic": false,
+            "lastClassName": "FEnpx",
+            "rules": Array [
+              "
+	display: flex;
+	align-items: center;
+	padding: ",
+              [Function],
+              "px;
+	position: relative;
+	z-index: 5;
+
+	.logo {
+		font-family: ",
+              [Function],
+              ";
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-right: auto;
+		color: ",
+              [Function],
+              ";
+	}
+	
+	a {
+		color: ",
+              [Function],
+              ";
+		padding: 0 ",
+              [Function],
+              "px;
+	}
+",
+            ],
+          },
+          "displayName": "styled.nav",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-ifAKCX",
+          "target": "nav",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <nav
+        className="sc-ifAKCX FEnpx"
+        data-test={true}
+      >
+        <Link
+          className="logo"
+          replace={false}
+          to="/"
+        >
+          <a
+            className="logo"
+            href="/"
+            onClick={[Function]}
+          >
+            React GraphQl Blog
+          </a>
+        </Link>
+        <User>
+          <Query
+            query={
+              Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "me",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "email",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "screenName",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "avatar",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 73,
+                  "start": 0,
+                },
+              }
+            }
+          >
+            <Link
+              replace={false}
+              to="/cms/create-post"
+            >
+              <a
+                href="/cms/create-post"
+                onClick={[Function]}
+              >
+                Log In / Create an Account
+              </a>
+            </Link>
+          </Query>
+        </User>
+      </nav>
+    </StyledComponent>
+  </styled.nav>,
+  <StyledComponent
+    data-test={true}
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-ifAKCX",
+          "isStatic": false,
+          "lastClassName": "FEnpx",
+          "rules": Array [
+            "
+	display: flex;
+	align-items: center;
+	padding: ",
+            [Function],
+            "px;
+	position: relative;
+	z-index: 5;
+
+	.logo {
+		font-family: ",
+            [Function],
+            ";
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-right: auto;
+		color: ",
+            [Function],
+            ";
+	}
+	
+	a {
+		color: ",
+            [Function],
+            ";
+		padding: 0 ",
+            [Function],
+            "px;
+	}
+",
+          ],
+        },
+        "displayName": "styled.nav",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-ifAKCX",
+        "target": "nav",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <nav
+      className="sc-ifAKCX FEnpx"
+      data-test={true}
+    >
+      <Link
+        className="logo"
+        replace={false}
+        to="/"
+      >
+        <a
+          className="logo"
+          href="/"
+          onClick={[Function]}
+        >
+          React GraphQl Blog
+        </a>
+      </Link>
+      <User>
+        <Query
+          query={
+            Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "me",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "email",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "screenName",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "avatar",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 73,
+                "start": 0,
+              },
+            }
+          }
+        >
+          <Link
+            replace={false}
+            to="/cms/create-post"
+          >
+            <a
+              href="/cms/create-post"
+              onClick={[Function]}
+            >
+              Log In / Create an Account
+            </a>
+          </Link>
+        </Query>
+      </User>
+    </nav>
+  </StyledComponent>,
+  <nav
+    className="sc-ifAKCX FEnpx"
+    data-test={true}
+  >
+    <Link
+      className="logo"
+      replace={false}
+      to="/"
+    >
+      <a
+        className="logo"
+        href="/"
+        onClick={[Function]}
+      >
+        React GraphQl Blog
+      </a>
+    </Link>
+    <User>
+      <Query
+        query={
+          Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": undefined,
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "me",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "email",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "screenName",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "avatar",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 73,
+              "start": 0,
+            },
+          }
+        }
+      >
+        <Link
+          replace={false}
+          to="/cms/create-post"
+        >
+          <a
+            href="/cms/create-post"
+            onClick={[Function]}
+          >
+            Log In / Create an Account
+          </a>
+        </Link>
+      </Query>
+    </User>
+  </nav>,
+]
+`;

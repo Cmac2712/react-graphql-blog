@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> should match snapshot 1`] = `
+<Footer>
+  <styled.footer>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-ifAKCX",
+            "isStatic": false,
+            "lastClassName": "xXrDq",
+            "rules": Array [
+              "
+	padding: ",
+              [Function],
+              "px;
+	background-color: #f1f1f1;
+	margin-top: ",
+              [Function],
+              "px;
+	font-size: ",
+              [Function],
+              "px;
+
+	.footer-container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.github {
+		display: flex;
+		align-items: center;
+		margin-right: auto;
+	}
+
+	.github-icon-container {
+		font-size: 0;
+		height: 18px;
+		width: 18px;
+	}
+
+	.github span:first-child {
+		margin-right: ",
+              [Function],
+              "px;
+	}
+
+",
+            ],
+          },
+          "displayName": "styled.footer",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-ifAKCX",
+          "target": "footer",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <footer
+        className="sc-ifAKCX xXrDq"
+      >
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bdVaJa",
+                  "isStatic": false,
+                  "lastClassName": "fIKPTH",
+                  "rules": Array [
+                    "
+	margin: 0 auto;
+	max-width: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bdVaJa",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bdVaJa fIKPTH"
+            >
+              <div
+                className="footer-container"
+              >
+                <a
+                  className="github"
+                  href="https://github.com/Cmac2712/react-graphql-blog"
+                >
+                  <span>
+                    View on GitHub
+                  </span>
+                  <ReactSVG
+                    className="github-icon-container"
+                    evalScripts="never"
+                    fallback={null}
+                    loading={null}
+                    onInjected={[Function]}
+                    renumerateIRIElements={true}
+                    src="./images/github.svg"
+                    svgClassName="github-icon"
+                    svgStyle={
+                      Object {
+                        "fill": "red",
+                        "height": 16,
+                        "width": 16,
+                      }
+                    }
+                    wrapper="span"
+                  >
+                    <span
+                      className="github-icon-container"
+                    />
+                  </ReactSVG>
+                </a>
+                <a
+                  className="myname"
+                  href="https://craigmacintyre.co.uk/"
+                >
+                  Craig MacIntyre
+                </a>
+                <div
+                  className="year"
+                >
+                  2019
+                </div>
+              </div>
+            </div>
+          </StyledComponent>
+        </styled.div>
+      </footer>
+    </StyledComponent>
+  </styled.footer>
+</Footer>
+`;

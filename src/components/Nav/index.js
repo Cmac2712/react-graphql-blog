@@ -5,7 +5,9 @@ import User, { CURRENT_USER_QUERY } from '../User';
 import NavBar from './styles';
 
 const Nav = props => (
-		<NavBar>
+	<NavBar
+		data-test
+	>
 			<Link
 				className="logo"
 				to={`/`}
@@ -25,7 +27,8 @@ const Nav = props => (
 						}
 
 						return (
-								<Link to={`/cms/create-post`}>
+								<Link
+									to={`/cms/create-post`}>
 									Log In / Create an Account
 								</Link>
 						)
