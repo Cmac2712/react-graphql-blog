@@ -34,63 +34,73 @@ class Signup extends Component {
 			{
 				({data, loading, refetch}) => {
 
-					if (loading) return <Loading/>;
+					const userLoading = loading;
 
 					return (
 						<Mutation
-						mutation={SIGNUP_MUTATION}
-						variables={this.state}
-						refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+							mutation={SIGNUP_MUTATION}
+							variables={this.state}
 						>
-						{(signup, { error, loading }) => (
-							<FormWrapper>
-							{ loading && <Loading/> }
-							<Form
-							method="post"
-							onSubmit={async e => {
-								e.preventDefault();
-								await signup();
-								this.setState({ name: '', email: '', password: '' });
-							}}
-							disabled={loading}
-							aria-busy={loading}
-							>
-							<fieldset>
-							<h2>Sign Up</h2>
-							<FloatingLabel
-							id="email"
-							type="email"
-							name="email"
-							placeholder="email"
-							styles={inputStyle}
-							value={this.state.email}
-							onChange={this.saveToState}
-							/>
-							<FloatingLabel
-								id="name"
-							type="text"
-							name="name"
-							placeholder="name"
-							styles={inputStyle}
-							value={this.state.name}
-							onChange={this.saveToState}
-							/>
-							<FloatingLabel
-								id="password"
-							type="password"
-							name="password"
-							placeholder="password"
-							styles={inputStyle}
-							value={this.state.password}
-							onChange={this.saveToState}
-							/>
+							{
+								(signup, { error, loading }) => {
 
-							<Button type="submit">Sign Up</Button>
-							</fieldset>
-							</Form>
-							</FormWrapper>
-						)}
-						</Mutation>
+								if (error) return <p>error {error.message}</p>
+
+								refetch();
+
+								return (
+								<FormWrapper>
+
+								{ (userLoading || loading) && <Loading/> }
+
+								<Form
+								method="post"
+								onSubmit={async e => {
+									e.preventDefault();
+									await signup();
+									this.setState({ name: '', email: '', password: '' });
+								}}
+								disabled={userLoading || loading}
+								aria-busy={userLoading || loading}
+								>
+								<fieldset>
+								<h2>Sign Up</h2>
+								<FloatingLabel
+									id="signup-email"
+									type="email"
+									name="email"
+									placeholder="email"
+									styles={inputStyle}
+									value={this.state.email}
+									onChange={this.saveToState}
+								/>
+								<FloatingLabel
+									id="signup-name"
+									type="text"
+									name="name"
+									placeholder="name"
+									styles={inputStyle}
+									value={this.state.name}
+									onChange={this.saveToState}
+								/>
+								<FloatingLabel
+									id="password"
+									type="password"
+									name="password"
+									placeholder="password"
+									styles={inputStyle}
+									value={this.state.password}
+									onChange={this.saveToState}
+								/>
+
+								<Button type="submit">Sign Up</Button>
+								</fieldset>
+								</Form>
+								</FormWrapper>
+								)
+								} 
+							}
+							</Mutation>
 				)
 
 

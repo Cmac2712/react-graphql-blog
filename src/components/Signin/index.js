@@ -37,7 +37,7 @@ class Signin extends Component {
 				{
 					({data, loading, refetch}) => {
 
-							if (data && data.me) return <Signout/>
+							const userLoading = loading;
 
 							return (
 								<Mutation
@@ -53,19 +53,22 @@ class Signin extends Component {
 
 											return (
 												<FormWrapper>
-													{ loading && <Loading/> }
+
+													{ (userLoading || loading) && <Loading/> }
+
 													<Form
 														onSubmit={async e => {
 														e.preventDefault();
 														const user = await signin();
 														this.setState({ name: "", email: "", password: "" });
 													}}
-													disabled={loading}
+													disabled={userLoading || loading}
+													aria-busy={userLoading || loading}
 												>
-													<fieldset disabled={loading} aria-busy={loading}>
+													<fieldset>
 														<h2>Sign In</h2>
 														<FloatingLabel
-															id="email"
+															id="signin-email"
 															type="email"
 															name="email"
 															placeholder="email"
@@ -74,7 +77,7 @@ class Signin extends Component {
 															onChange={this.saveToState}
 														/>
 														<FloatingLabel
-															id="password"
+															id="signin-password"
 															type="password"
 															name="password"
 															placeholder="password"
