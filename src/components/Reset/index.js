@@ -1,8 +1,14 @@
 import qs from 'query-string';
 import React, { Component } from 'react';
+import FloatingLabel from 'floating-label-react'
 import { Mutation } from 'react-apollo';
 import { CURRENT_USER_QUERY } from '../User';
 import gql from 'graphql-tag';
+import Loading from '../Loading';
+import User from '../User';
+import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
+import ResetForm from './style';
+import SuccessMessage from './SuccessMessage';
 
 // TODO: Hide this if the user is logged in
 
@@ -30,54 +36,68 @@ class Reset extends Component {
 
 	render() {
     return (
-      <Mutation
-        mutation={RESET_MUTATION}
-        variables={{
-          resetToken: this.state.resetToken,
-          password: this.state.password,
-          confirmPassword: this.state.confirmPassword,
-        }}
-        refetchQueries={[{ query: CURRENT_USER_QUERY }]}
-      >
-        {(reset, { error, loading, called }) => (
-          <form
-            method="post"
-            onSubmit={async e => {
-              e.preventDefault();
-              await reset();
-              this.setState({ password: '', confirmPassword: '' });
-            }}
-          >
-            <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Reset Your Password</h2>
-			  { error && <p>error</p> }
-              <label htmlFor="password">
-                Password
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  value={this.state.password}
-                  onChange={this.saveToState}
-                />
-              </label>
+			<User>
+			{({data}) => {
 
-              <label htmlFor="confirmPassword">
-                Confirm Your Password
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="confirmPassword"
-                  value={this.state.confirmPassword}
-                  onChange={this.saveToState}
-                />
-              </label>
+				if (data.me) return <SuccessMessage/>
 
-              <button type="submit">Reset Your Password!</button>
-            </fieldset>
-          </form>
-        )}
-      </Mutation>
+				return (
+					<Mutation
+						mutation={RESET_MUTATION}
+						variables={{
+							resetToken: this.state.resetToken,
+							password: this.state.password,
+							confirmPassword: this.state.confirmPassword,
+						}}
+						refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+					>
+						{(reset, { error, loading, called }) => (
+							<Wrapper>
+								<FormWrapper>
+									{ loading && <Loading/> }
+									<ResetForm
+										method="post"
+										disabled={loading}
+										onSubmit={async e => {
+											e.preventDefault();
+											const hasReset = await reset();
+
+											console.log(hasReset);
+										}}
+									>
+										<fieldset disabled={loading} aria-busy={loading}>
+											<h2>Reset Your Password</h2>
+											{ error && <p>error</p> }
+											<FloatingLabel
+												id="password"
+												type="password"
+												name="password"
+												placeholder="Password"
+												styles={inputStyle}
+												value={this.state.password}
+												onChange={this.saveToState}
+											/>
+
+											<FloatingLabel
+												id="confirmPassword"
+												type="password"
+												name="confirmPassword"
+												placeholder="Confirm Password"
+												styles={inputStyle}
+												value={this.state.confirmPassword}
+												onChange={this.saveToState}
+											/>
+
+											<Button type="submit">Reset Your Password!</Button>
+										</fieldset>
+									</ResetForm>
+								</FormWrapper>
+							</Wrapper>
+						)}
+					</Mutation>
+				)
+			}}
+			</User>
     )
 	}
 }

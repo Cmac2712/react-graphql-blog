@@ -3,31 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { randomBytes } = require('crypto');
 const { promisify } = require('util');
-const nodemailer = require('nodemailer');
-
-const transport = nodemailer.createTransport({
-	host: process.env.MAIL_HOST,
-	port: process.env.MAIL_PORT,
-	auth: {
-		user: process.env.MAIL_USER,
-		pass: process.env.MAIL_PASS,
-	},
-});
-
-const createEmail = text => `
-<div className="email" style="
-	border: 1px solid #666;
-	padding: 20px;
-	font-family: sans-serif;
-	line-height: 2;
-	font-size: 16px;
-  ">
-  <h2>Hello There!</h2>
-  <p>${text}</p>
-
-  <p>Craig MacIntyre</p>
-  </div>
-`;
+const email = require('../email');
 
 const mutations = {
 	async createPost(parent, { title, content, thumbnail }, ctx, info) {
@@ -124,7 +100,6 @@ const mutations = {
 		return user; 
 	}, 
 	async requestReset(parent, args, ctx, info) {
-		// 1. Check if this is a real user
 		const user = await ctx.prisma.query.user({ where: { email: args.email } });
 		if (!user) {
 			throw new Error(`No such user found for email ${args.email}`);
@@ -138,15 +113,7 @@ const mutations = {
 			data: { resetToken, resetTokenExpiry },
 		});
 		// 3. Email them that reset token
-		const mailRes = await transport.sendMail({
-			from: 'craig@craigmacintyre.io',
-			to: user.email,
-			subject: 'Your Password Reset Token',
-			html: createEmail(`Your Password Reset Token is here!
-	  \n\n
-	  <a href="${process.env
-		.FRONTEND_URL}/reset?resetToken=${resetToken}">Click Here to Reset</a>`),
-		});
+		email.sendResetTokenEmail(resetToken, args.email);
 
 		// 4. Return the message
 		return { message: 'Thanks!' };

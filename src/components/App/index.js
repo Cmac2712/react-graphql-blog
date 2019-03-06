@@ -12,6 +12,7 @@ import UpdatePost from '../UpdatePost';
 import SinglePost from '../SinglePost';
 import MyPosts from '../MyPosts';
 import Account from '../Account';
+import RequestReset from '../RequestReset';
 import Reset from '../Reset';
 import Cms from '../Cms';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -43,6 +44,7 @@ class App extends Component {
 							<Route exact path={`/`} component={Posts} />
 							<Route  path={`/cms`} component={Cms} />
 							<Route path={`/reset`} component={Reset} />
+							<Route path={`/request-reset`} component={RequestReset} />
 							<Route path={`/single`} component={SinglePost} />
 							</>
 						</Router>

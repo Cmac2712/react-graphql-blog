@@ -3,29 +3,47 @@ import { mount } from 'enzyme';
 import wait from 'waait';
 import toJSON from 'enzyme-to-json';
 import { MockedProvider } from 'react-apollo/test-utils';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Cms from '../index';
-import { mockUser, signedInMocks } from '../../../TestUtils';
+import { mockUser, signedInMocks, signedOutMocks } from '../../../TestUtils';
 
 describe('<Cms/>', () => {
 	it('should match snapshot', () => {
-		console.log('TODO');
-	});
-
-	it('should forward to CreatePost page after login', async () => {
 		const wrapper = mount(
-			<BrowserRouter>
-			<MockedProvider
-				mocks={signedInMocks}
+			<MemoryRouter
+				initialEntries={["/cms"]}
+				initialIndex={1}
 			>
-				<Cms/>
+				<MockedProvider
+					mocks={signedInMocks}
+				>
+					<Cms/>
 				</MockedProvider>
-			</BrowserRouter>
+			</MemoryRouter>
 		);
 
-		await wait(5000); // Logging us in
+		expect(toJSON(wrapper)).toMatchSnapshot();
+	});
+
+	it('should render CreatePost component when signed in', async () => {
+		const wrapper = mount(
+			<MemoryRouter
+				initialEntries={["/cms"]}
+				initialIndex={1}
+			>
+				<MockedProvider
+					mocks={signedInMocks}
+				>
+					<Cms/>
+				</MockedProvider>
+			</MemoryRouter>
+		);
+
+		await wait(); 
 		wrapper.update();
 
-		console.log(wrapper.html());
+		const createPostForm = wrapper.find('#create-post-form').first();
+
+		expect(createPostForm).toHaveLength(1)
 	});
 });

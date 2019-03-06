@@ -81,6 +81,7 @@ class CreatePost extends Component {
 							<FormWrapper>
 								{ loading && <Loading/> }
 								<CreatePostForm
+									id="create-post-form"
 									className="cms-section"
 									disabled={this.state.publishing}
 									onSubmit={async e => {

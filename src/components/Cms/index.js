@@ -16,6 +16,7 @@ class Cms extends Component {
 					<Portal>
 								<CmsPage>
 									<Sidebar/>
+										<Route exact path={`/cms`} component={CreatePost} />
 										<Route path={`/cms/create-post`} component={CreatePost} />
 										<Route path={`/cms/account`} component={Account} />
 										<Route path={`/cms/myposts`} component={MyPosts} />

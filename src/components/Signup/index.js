@@ -58,6 +58,7 @@ class Signup extends Component {
 							<fieldset>
 							<h2>Sign Up</h2>
 							<FloatingLabel
+							id="email"
 							type="email"
 							name="email"
 							placeholder="email"
@@ -66,6 +67,7 @@ class Signup extends Component {
 							onChange={this.saveToState}
 							/>
 							<FloatingLabel
+								id="name"
 							type="text"
 							name="name"
 							placeholder="name"
@@ -74,6 +76,7 @@ class Signup extends Component {
 							onChange={this.saveToState}
 							/>
 							<FloatingLabel
+								id="password"
 							type="password"
 							name="password"
 							placeholder="password"

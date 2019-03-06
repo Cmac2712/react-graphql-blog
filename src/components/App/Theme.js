@@ -16,6 +16,7 @@ const theme = {
 	headerFont: '"Alegreya", serif', 
 	baseFontSize: 16, 
 	smallFontSize: 12, 
+	success: '#009900', 
 	warn: '#aa2222', 
 	spacingUnit: 25,  
 	wrapperWidth: '1280px', 
@@ -150,6 +151,12 @@ const Form = styled.form`
 	fieldset {
 		position: relative;
 		border: none;
+	}
+
+	.link {
+		display: block;
+		text-align: right;
+		margin-bottom: ${props => props.theme.spacingUnit}px;
 	}
 
 	button {

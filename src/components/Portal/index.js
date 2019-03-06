@@ -11,6 +11,7 @@ import { Wrapper } from '../App/Theme';
 import { SignInStyles } from './style';
 
 // TODO: Move User query here instead of having one in signup and signin
+// TODO: Use User comp
 
 class Portal extends Component {
 
@@ -27,7 +28,6 @@ class Portal extends Component {
 									<Signin/>
 									<Signup/>
 								</div>
-								<RequestReset/>
 							</Wrapper>
 						</SignInStyles>
 					);
