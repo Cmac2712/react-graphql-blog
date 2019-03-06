@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from '../Footer';
 
 const client = new ApolloClient({
-	uri: process.env.NODE_ENV === 'development' ? endpoint : productionEndpoint,
+	uri: process.env.REACT_APP_LOCAL ? endpoint : productionEndpoint,
 	request: operation => {
 		operation.setContext({
 			fetchOptions: {
