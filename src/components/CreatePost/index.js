@@ -100,7 +100,7 @@ class CreatePost extends Component {
 								<CreatePostForm
 									id="create-post-form"
 									className="cms-section"
-									disabled={this.state.publishing}
+									disabled={this.state.uploading}
 									onSubmit={async e => {
 										  e.preventDefault();
 										  this.setState({ uploading: true });

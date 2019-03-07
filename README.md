@@ -1,3 +1,18 @@
 ## React GraphQL Blog
 
-This is a simple implementation of a blogging platform using React and GraphQL.
+This is a full-stack blogging application using React + GraphQl.
+
+### Stack
+
+React
+Apollo Client
+Yoga Server
+Prisma
+
+### Features
+
+Account creation 
+Password recovery
+Custom Avatars
+Custom Screen Names
+Edit/Delete Posts
