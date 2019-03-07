@@ -22,6 +22,7 @@ class Signup extends Component {
 		name: '',
 		email: '',
 		password: '',
+		_loading: false
 	};
 
 	saveToState = e => {
@@ -29,39 +30,37 @@ class Signup extends Component {
 	};
 
 	render() {
-		return (
-			<User>
-			{
-				({data, loading, refetch}) => {
-
-					const userLoading = loading;
 
 					return (
 						<Mutation
 							mutation={SIGNUP_MUTATION}
 							variables={this.state}
+							refetchQueries={[{
+								query: CURRENT_USER_QUERY
+							}]}
 						>
 							{
 								(signup, { error, loading }) => {
 
 								if (error) return <p>error {error.message}</p>
 
-								refetch();
-
 								return (
 								<FormWrapper>
 
-								{ (userLoading || loading) && <Loading/> }
+								{ (this.state._loading) && <Loading/> }
 
 								<Form
 								method="post"
 								onSubmit={async e => {
 									e.preventDefault();
+									this.setState({
+										_loading: true
+									});
 									await signup();
 									this.setState({ name: '', email: '', password: '' });
 								}}
-								disabled={userLoading || loading}
-								aria-busy={userLoading || loading}
+								disabled={this.state._loading}
+								aria-busy={this.state._loading}
 								>
 								<fieldset>
 								<h2>Sign Up</h2>
@@ -102,13 +101,6 @@ class Signup extends Component {
 							}
 							</Mutation>
 				)
-
-
-				}
-			}
-			</User>
-
-		);
 
 	}
 }
