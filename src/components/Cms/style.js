@@ -19,8 +19,7 @@ const CmsPage = styled.div`
 const StyledSidebar = styled.nav`
 	display: flex;	
 	flex-direction: column;
-	height: 100%;
-	max-width: 15vw;
+	flex: 0 0 20vw;
 	width: 100%;
 	padding: ${props => props.theme.spacingUnit}px 0;
 	padding-top: 0;

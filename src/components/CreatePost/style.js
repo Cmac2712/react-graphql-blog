@@ -12,6 +12,7 @@ const CreatePostForm = styled(Form)`
 	}
 
 	.editor {
+		min-height: 300px;
 		padding-left: ${props => props.theme.spacingUnit}px;
 		padding-left: ${props => props.theme.spacingUnit}px;
 	}

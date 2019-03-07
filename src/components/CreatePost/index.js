@@ -122,6 +122,11 @@ class CreatePost extends Component {
 											value={this.state.title}
 											onChange={this.saveToState}
 										/>
+										<input
+											type="file"
+											name="file"
+											onChange={this.handleFile}
+										/>
 										<Editor
 											id="content"
 											name="content"
@@ -132,11 +137,6 @@ class CreatePost extends Component {
 											toolbarClassName="editor-toolbar"
 											value={this.state.content}
 											onEditorStateChange={this.handleEditorStateChange}
-										/>
-										<input
-											type="file"
-											name="file"
-											onChange={this.handleFile}
 										/>
 										<Button>Publish{this.state.uploading && 'ing'}</Button>
 									</fieldset>
