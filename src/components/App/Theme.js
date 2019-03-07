@@ -104,6 +104,7 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled.div`
 	margin: 0 auto;
 	max-width: ${props => props.theme.wrapperWidth};
+	padding: 0 ${props => props.theme.spacingUnit}px;
 `;
 
 const FormWrapper = styled.div`

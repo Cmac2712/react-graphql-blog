@@ -26,12 +26,13 @@ const ALL_POSTS_QUERY = gql`
 class Posts extends Component {
 
 	clip = text => {
-		return text.split(/\s+/).slice(0,20).join(" ") + "...";
+		return text.split(/\s+/).slice(0,15).join(" ") + "...";
 	}
 
 	render() {
 		return (
 			<Wrapper>
+				<h2>Latest Posts</h2>
 				<StyledPosts>
 					<Query
 						query={ALL_POSTS_QUERY}
@@ -41,7 +42,7 @@ class Posts extends Component {
 
 								if (loading) return <Loading/>
 
-								return posts.map(post => (
+								return posts.reverse().map(post => (
 									<Post post={post} clip={this.clip} />
 								)) 
 							}

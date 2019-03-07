@@ -28,6 +28,10 @@ const StyledFooter = styled.footer`
 		margin-right: ${props => props.theme.spacingUnit/4}px;
 	}
 
+	.myname {
+		margin-right: ${props => props.theme.spacingUnit/4}px;
+	}
+
 `;
 
 export default StyledFooter;

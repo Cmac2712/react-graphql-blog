@@ -18,9 +18,10 @@ const Post = ({ post, id, clip }) => (
 			}}
 			/>
 			<div className="text">
-				<h4>{post.title}</h4>
+				<h3>{post.title}</h3>
 				<p>{clip(post.content)}</p>
 				<Author
+					className="post__author"
 					name={post.user.name}
 					screenName={post.user.screenName}
 					avatar={post.user.avatar}
