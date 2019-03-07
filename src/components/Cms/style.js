@@ -6,7 +6,14 @@ const CmsPage = styled.div`
 	.cms-section {
 		position: relative;
 		margin-left: ${props => props.theme.spacingUnit}px;
+		margin-right: ${props => props.theme.spacingUnit}px;
 	}
+
+	h1 {
+		line-height: 1.5rem;
+		margin-bottom: ${props => props.theme.spacingUnit}px;
+	}
+
 `;
 
 const StyledSidebar = styled.nav`
@@ -20,7 +27,6 @@ const StyledSidebar = styled.nav`
 	border-right: 1px solid #ddd;
 	position: relative;
 	z-index: 999;
-
 
 	a {
 		padding: ${props => (props.theme.spacingUnit/2)}px;

@@ -98,7 +98,7 @@ const GlobalStyle = createGlobalStyle`
 	.min-height {
 		min-height: 50vh;
 	}
-	
+
 `; 
 
 const Wrapper = styled.div`

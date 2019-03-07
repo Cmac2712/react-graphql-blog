@@ -42,7 +42,7 @@ class Posts extends Component {
 
 								if (loading) return <Loading/>
 
-								return posts.reverse().map(post => (
+								return posts.map(post => (
 									<Post post={post} clip={this.clip} />
 								)) 
 							}

@@ -5,6 +5,11 @@ import { Mutation } from 'react-apollo';
 import { ALL_POSTS_QUERY } from '../Posts'; 
 import { CreatePostForm } from './style';
 import { Wrapper, FormWrapper, Form, Button } from '../App/Theme';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
 
 // TODO: Add floating labels
 
@@ -22,6 +27,7 @@ const CREATE_POST_MUTATION = gql`
 			id
 			title
 			content
+			editorState
 			thumbnail
 		}
 	}
@@ -32,6 +38,7 @@ class CreatePost extends Component {
 	state = {
 		title: '', 
 		content: '', 
+		editorState: EditorState.createEmpty(), 
 		uploading: false
 	}
 
@@ -67,6 +74,16 @@ class CreatePost extends Component {
 		return thumbnail;
 	};
 
+	handleEditorStateChange = editorState => {
+		const rawContentState = convertToRaw(editorState.getCurrentContent());
+		const markup = draftToHtml(rawContentState);
+
+		this.setState({
+			editorState, 
+			content: markup
+		});
+	}
+
 	render() {
 		return (
 					<Mutation
@@ -85,12 +102,13 @@ class CreatePost extends Component {
 									className="cms-section"
 									disabled={this.state.publishing}
 									onSubmit={async e => {
-										e.preventDefault();
-										this.setState({ uploading: true });
-										const thumbnail = await this.uploadImage(e);
-										const { data } = await createPost();
+										  e.preventDefault();
+										  this.setState({ uploading: true });
+										
+										  const thumbnail = await this.uploadImage(e);
+										  const { data } = await createPost();
 
-										this.setState({ uploading: false });
+										  this.setState({ uploading: false });
 
 											this.props.history.push(`/single?postId=${data.createPost.id}`)
 										}}
@@ -104,13 +122,16 @@ class CreatePost extends Component {
 											value={this.state.title}
 											onChange={this.saveToState}
 										/>
-										<textarea
+										<Editor
 											id="content"
 											name="content"
 											rows="10"
 											placeholder={`Write your post here...`}
+											wrapperClassName="editor-wrapper"
+											editorClassName="editor"
+											toolbarClassName="editor-toolbar"
 											value={this.state.content}
-											onChange={this.saveToState}
+											onEditorStateChange={this.handleEditorStateChange}
 										/>
 										<input
 											type="file"

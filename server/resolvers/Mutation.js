@@ -6,7 +6,7 @@ const { promisify } = require('util');
 const email = require('../email');
 
 const mutations = {
-	async createPost(parent, { title, content, thumbnail }, ctx, info) {
+	async createPost(parent, { title, content, editorState, thumbnail }, ctx, info) {
 
 		if (!ctx.request.userId) {
 			throw new Error('You are not logged in!');
@@ -16,6 +16,7 @@ const mutations = {
 			data: {
 				title, 
 				content, 
+				editorState, 
 				thumbnail, 
 				user: {
 					connect: {

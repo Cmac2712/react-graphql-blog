@@ -40,7 +40,8 @@ class Account extends Component {
 
 	state = {
 		screenName: '', 
-		avatar: ''
+		avatar: '', 
+		uploading: false
 	}	
 
 	uploadImage = async () => {
@@ -53,6 +54,7 @@ class Account extends Component {
 		data.append('file', file);
 		data.append('upload_preset', 'sickfits');
 
+		this.setState({ uploading: true });
 		const res = await fetch('https://api.cloudinary.com/v1_1/cmacintyre/image/upload',
 			{
 				method: 'POST',
@@ -60,9 +62,8 @@ class Account extends Component {
 			});
 
 		const avatar = await res.json();
-
 		this.setState({
-			avatar: avatar.secure_url,
+			avatar: avatar.secure_url
 		});
 
 		return avatar;
@@ -73,17 +74,18 @@ class Account extends Component {
 	}
 
 	handleFile = e => {
-		this.setState({
-			file: e.target.files[0]
-		})
+		this.setState({ file: e.target.files[0] });
+
+		setTimeout(() => {
+			this.buttonRef.click();
+		}, 0);
 	}
 
 	handleSubmit = async (updateUserInfo, refetch) => {
-
 			await this.uploadImage();
 			await updateUserInfo();
-			refetch();
-
+			await refetch();
+			this.setState({ uploading: false });
 	}
 
 	render() {
@@ -120,19 +122,30 @@ class Account extends Component {
 													}}
 												>
 													<fieldset>
-														<Avatar
-															avatar={data.me.avatar}
-															width="150px"
-															height="150px"
-														/>
+														<div
+															className={`avatar-wrapper ${this.state.uploading && `image-uploading`}`}
+														>
+															<Avatar
+																onClick={() => {
+																	this.avatarInput.click();
+																}}
+																avatar={data.me.avatar}
+																width="150px"
+																height="150px"
+															/>
+														</div>
 														<input
+															style={{
+																display: 'none'
+															}}
 															placeholder="Avatar"
 															type="file"
 															name="avatar"
+															ref={input => { this.avatarInput = input }}
 															styles={inputStyle}
 															onChange={this.handleFile}
 														/>
-														<label for="screen-name">Screen Name</label>
+														<label htmlFor="screen-name">Screen Name</label>
 														<input
 															id="screen-name"
 															placeholder="Screen Name"
@@ -142,7 +155,10 @@ class Account extends Component {
 															defaultValue={data.me.screenName}
 															onChange={this.saveToState}
 														/>
-														<Button>Update</Button>
+														<Button
+															ref={button => { this.buttonRef = button }}
+														>Update
+														</Button>
 													</fieldset>
 												</Form>
 												</>

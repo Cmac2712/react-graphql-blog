@@ -52,7 +52,8 @@ class SinglePost extends Component {
 								>
 								</div>
 								<h1>{post.title}</h1>
-								<p>{post.content}</p>
+								<div dangerouslySetInnerHTML={{__html: post.content}} />
+							
 								<Author
 									name={post.user.name}
 									screenName={post.user.screenName}

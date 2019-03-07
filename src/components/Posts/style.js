@@ -25,7 +25,6 @@ const StyledPost = styled.li`
 		margin-bottom: 2%;
 		flex-basis: 33.333%;
 	}
-	
 
 	&:nth-child(3n) {
 		margin-right: 0;
@@ -69,12 +68,6 @@ const StyledPost = styled.li`
 		flex: 0 1 auto;
 	}
 
-	.styled-avatar  {
-		flex-basis: 10%;
-		margin-bottom: -7px;
-		margin-left: 12px;
-		margin-right: 6px;
-	}
 `; 	
 
 const Thumbnail = styled.div`
