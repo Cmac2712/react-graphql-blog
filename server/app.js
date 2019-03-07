@@ -1,5 +1,6 @@
 require('dotenv').config({ path: './server/variables.env' });
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const { GraphQLServer } = require('graphql-yoga')
 const Mutation = require('./resolvers/Mutation');
@@ -28,6 +29,8 @@ const server = new GraphQLServer({
 		prisma
 	})
 });
+
+server.express.use(bodyParser({limit: '5mb'}));
 
 server.express.use(cookieParser());
 
