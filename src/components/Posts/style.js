@@ -6,7 +6,7 @@ const StyledPosts = styled.ul`
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	min-height: 50vh;
+	min-height: 300px;
 `;
 
 const StyledPost = styled.li`
@@ -22,6 +22,7 @@ const StyledPost = styled.li`
 	}
 
 	@media (min-width: ${props => props.theme.breakpoints.laptop}px) {
+		margin-bottom: 2%;
 		flex-basis: 33.333%;
 	}
 	
@@ -35,12 +36,6 @@ const StyledPost = styled.li`
 		margin-bottom: .2rem;
 	}
 
-	.text {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-start;
-	}
-
 	a {
 		display: flex;
 		//flex-wrap: wrap;
@@ -48,8 +43,13 @@ const StyledPost = styled.li`
 		width: 100%;
 	}
 
+	.text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
 	.text p {
-		flex-basis: 100%;
 		margin: 0;
 		margin-bottom: ${props => props.theme.spacingUnit/2}px;
 		font-size: .8rem;
@@ -63,8 +63,10 @@ const StyledPost = styled.li`
 	}
 
 	p.post__author {
+		line-height: 1;
+		margin-top: auto;
 		margin-bottom: 0;
-		align-self: flex-end;
+		flex: 0 1 auto;
 	}
 
 	.styled-avatar  {

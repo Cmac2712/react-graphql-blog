@@ -6,6 +6,7 @@ import Portal from '../Portal';
 import Loading from '../Loading';
 import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
 import Sidebar from '../Cms/Sidebar';
+import Avatar from '../Avatar';
 import { AccountFormWrapper } from './style.js';
 
 // Update User
@@ -19,6 +20,8 @@ const UPDATE_USER_INFO_MUTATION = gql`
 		avatar: $avatar
 	) {
 			id
+			screenName
+			avatar
 		}
 	}
 `;
@@ -76,21 +79,11 @@ class Account extends Component {
 	}
 
 	handleSubmit = async (updateUserInfo, refetch) => {
-		this.setState({loading: true});
 
-		const screenNameHasChanged = this.state.screenName !== ''; 
-		const avatarHasChanged = this.state.avatar !== ''; 
-
-		if (avatarHasChanged) {
-			const avatar = await this.uploadImage();
-		}
-
-		if (screenNameHasChanged) {
-			const userInfo = await updateUserInfo();
+			await this.uploadImage();
+			await updateUserInfo();
 			refetch();
-		}
 
-		this.setState({loading: false});
 	}
 
 	render() {
@@ -104,19 +97,19 @@ class Account extends Component {
 					{
 						({ data, loading, refetch } ) => {
 
-							console.log(data);
-
 							if (loading) return <Loading/>;
-
-							if (this.state.loading) return <Loading/>;
 
 							return (
 								<Mutation
 									mutation={UPDATE_USER_INFO_MUTATION}
-									variables={this.state}
+									variables={{
+										screenName: this.state.screenName || data.me.screenName, 
+										avatar: this.state.avatar || data.me.avatar
+									}}
 								>
 									{
 										(updateUserInfo, loading, error) => {
+
 											return (
 												<>
 												<h1>Account Details</h1>
@@ -127,7 +120,21 @@ class Account extends Component {
 													}}
 												>
 													<fieldset>
+														<Avatar
+															avatar={data.me.avatar}
+															width="150px"
+															height="150px"
+														/>
 														<input
+															placeholder="Avatar"
+															type="file"
+															name="avatar"
+															styles={inputStyle}
+															onChange={this.handleFile}
+														/>
+														<label for="screen-name">Screen Name</label>
+														<input
+															id="screen-name"
 															placeholder="Screen Name"
 															type="text"
 															name="screenName"
