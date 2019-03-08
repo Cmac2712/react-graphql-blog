@@ -30,6 +30,8 @@ const AuthorPosts = styled.ul`
 
 	.link--delete {
 		color: ${props => props.theme.warn};
+		background: none;
+		border: none;
 	}
 `;
 
