@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Mutation, Query } from 'react-apollo';
-import User, { CURRENT_USER_QUERY } from '../User';
-import Signout from '../Signout';
+import { Query } from 'react-apollo';
+import { CURRENT_USER_QUERY } from '../User';
 import Signin from '../Signin';
 import Signup from '../Signup';
 import Loading from '../Loading';
-import RequestReset from '../RequestReset';
-import gql from 'graphql-tag';
 import { Wrapper } from '../App/Theme';
 import { SignInStyles } from './style';
 

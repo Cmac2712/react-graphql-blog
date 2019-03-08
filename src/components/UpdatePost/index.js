@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
-import User from '../User';
 import Loading from '../Loading';
 import { Form, Button } from '../App/Theme';
 import { SINGLE_POST_QUERY } from '../SinglePost';
@@ -22,13 +21,12 @@ class UpdatePost extends Component {
 	}
 
 	handleChange = e => {
-		const { name, type, value } = e.target;
+		const { name, value } = e.target;
 		this.setState({ [name]: value });
 	}
 
 	handleSubmit = async (updatePost) => {
-		const res = await updatePost({
-
+		await updatePost({
 			variables: {
 				id: this.props.id,
 				...this.state,

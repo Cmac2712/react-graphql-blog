@@ -6,7 +6,7 @@ import { CURRENT_USER_QUERY } from '../User';
 import gql from 'graphql-tag';
 import Loading from '../Loading';
 import User from '../User';
-import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
+import { Wrapper, FormWrapper, Button, inputStyle } from '../App/Theme';
 import ResetForm from './style';
 import SuccessMessage from './SuccessMessage';
 

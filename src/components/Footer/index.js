@@ -20,11 +20,11 @@ class Footer extends Component {
 						>
 							<span>View on GitHub</span>
 							<ReactSVG
-								src="./images/github.svg"
+								src="/images/github.svg"
 								wrapper="span"
 								className="github-icon-container"
 								onInjected={(error) => {
-									console.log({error});
+									error && console.log(error);
 									return;
 								}}
 								svgClassName="github-icon"

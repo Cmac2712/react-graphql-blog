@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation, Query} from 'react-apollo';
-import FloatingLabel from 'floating-label-react';
-import Portal from '../Portal';
 import Loading from '../Loading';
-import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
-import Sidebar from '../Cms/Sidebar';
+import { Form, Button, inputStyle } from '../App/Theme';
 import Avatar from '../Avatar';
 import { AccountFormWrapper } from './style.js';
 

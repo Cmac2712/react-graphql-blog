@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import FloatingLabel from 'floating-label-react'
 import gql from 'graphql-tag';
-import User, { CURRENT_USER_QUERY } from '../User';
+import { CURRENT_USER_QUERY } from '../User';
 import Loading from '../Loading';
 import { Form, FormWrapper, Button, inputStyle } from '../App/Theme';
 
