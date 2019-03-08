@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import { POSTS_BY_AUTHOR } from '../MyPosts';
+import PropTypes from 'prop-types';
 
 const DELETE_POST_MUTATION = gql`
 	mutation DELETE_POST_MUTATION($id: ID!) {
@@ -13,6 +14,10 @@ const DELETE_POST_MUTATION = gql`
 `;
 
 class DeletePost extends Component {
+
+	static propTypes = {
+		id: PropTypes.string.isRequired
+	}
 
 	updatePosts = (cache, payload) => {
 		const data = cache.readQuery({ query: POSTS_BY_AUTHOR })

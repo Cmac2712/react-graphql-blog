@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { fallBackImage } from '../../config.js';
 import Author from '../Author';
 import { stripHTML } from '../../utils';
-
-
+import PropTypes from 'prop-types';
 import { StyledPost, Thumbnail } from './style';
 
 const Post = ({ post, id, clip }) => { 
@@ -34,6 +33,19 @@ const Post = ({ post, id, clip }) => {
 		</StyledPost>
 	);
 
- };
+};
+
+Post.propTypes = {
+	thumbnail: PropTypes.string, 
+	post: PropTypes.shape({
+		id: PropTypes.string.isRequired, 
+		user: PropTypes.shape({
+			name: PropTypes.string.isRequired, 
+			screenName: PropTypes.string, 
+			avatar: PropTypes.string
+		})
+	}), 
+	clip: PropTypes.func.isRequired
+}
 
 export default Post;

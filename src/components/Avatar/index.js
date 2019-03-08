@@ -1,5 +1,6 @@
 import React from 'react';
 import StyledAvatar from './style';
+import PropTypes from 'prop-types';
 
 
 const Avatar = props => (
@@ -11,5 +12,13 @@ const Avatar = props => (
 		height={props.height || '25px'}
 	/>
 );
+
+Avatar.propTypes = {
+	onClick: PropTypes.func, 
+	className: PropTypes.string, 
+	src: PropTypes.string, 
+	width: PropTypes.string, 
+	height: PropTypes.string
+}
 
 export default Avatar;

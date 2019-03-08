@@ -6,11 +6,14 @@ import Signup from '../Signup';
 import Loading from '../Loading';
 import { Wrapper } from '../App/Theme';
 import { SignInStyles } from './style';
+import PropTypes from 'prop-types';
 
-// TODO: Move User query here instead of having one in signup and signin
-// TODO: Use User comp
 
 class Portal extends Component {
+
+	static propTypes = {
+		children: PropTypes.node.isRequired
+	}
 
 	render() {
 		return (

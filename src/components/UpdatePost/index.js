@@ -5,6 +5,7 @@ import { Query, Mutation } from 'react-apollo';
 import Loading from '../Loading';
 import { Form, Button } from '../App/Theme';
 import { SINGLE_POST_QUERY } from '../SinglePost';
+import PropTypes from 'prop-types';
 
 const UPDATE_POST_MUTATION = gql`
   mutation UPDATE_POST_QUERY($id: ID!, $title: String, $content: String) {
@@ -15,6 +16,10 @@ const UPDATE_POST_MUTATION = gql`
 `;
 
 class UpdatePost extends Component {
+
+	static propTypes = {
+		id: PropTypes.string.isRequired
+	}
 
 	state = {
 		id: qs.parse(this.props.location.search).postId
