@@ -12,7 +12,7 @@ const Nav = props => (
 				className="logo"
 				to={`/`}
 			>
-				React GraphQl Blog
+				React GraphQL Blog
 			</Link>
 			<User>
 				{

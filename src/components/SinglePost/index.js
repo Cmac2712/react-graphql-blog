@@ -45,13 +45,13 @@ class SinglePost extends Component {
 
 					return (
 							<StyledPost>
+								<h1>{post.title}</h1>
 								<div className="post__headImage"
 											style={{
 												backgroundImage: `url(${post.thumbnail})`
 											}}
 								>
 								</div>
-								<h1>{post.title}</h1>
 								<div dangerouslySetInnerHTML={{__html: post.content}} />
 							
 								<Author
