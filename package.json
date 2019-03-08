@@ -48,7 +48,8 @@
     "build": "react-scripts build",
     "deploy-prisma": "cd server && prisma deploy --env-file ./variables.env",
     "deploy": "git push heroku master && git push heroku-api",
-    "test": "jest --watch"
+    "test": "NODE_ENV=test jest", 
+    "test-wathc": "NODE_ENV=test jest --watch"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.4",
