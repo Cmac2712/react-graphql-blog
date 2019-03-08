@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import FloatingLabel from 'floating-label-react';
 import { Link } from 'react-router-dom';
-import User, { CURRENT_USER_QUERY } from '../User';
-import Signout from '../Signout';
-import RequestReset from '../RequestReset';
-import Signup from '../Signup';
+import { CURRENT_USER_QUERY } from '../User';
 import Loading from '../Loading';
 import gql from 'graphql-tag';
 import { Form, FormWrapper,  Button, inputStyle } from '../App/Theme';
@@ -58,7 +55,7 @@ class Signin extends Component {
 									_loading: true
 								});
 
-								const user = await signin();
+								await signin();
 								this.setState({
 									name: "",
 									email: "",

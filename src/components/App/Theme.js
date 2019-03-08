@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-import FloatingLabel, {
+import {
 	floatingStyles,
 	focusStyles,
 	inputStyles,

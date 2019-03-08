@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import Sidebar from '../Cms/Sidebar';
 import DeletePost from '../DeletePost';
 import Loading from '../Loading';
-import { CmsPage } from './style';
-import { Wrapper } from '../App/Theme';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
-import { ALL_POSTS_QUERY } from '../Posts';
 import { AuthorPosts, AuthorPostsSection } from './style';
 
 const POSTS_BY_AUTHOR = gql`

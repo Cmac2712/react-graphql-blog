@@ -3,7 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import FloatingLabel from 'floating-label-react'
 import Loading from '../Loading';
-import { Wrapper, Form, FormWrapper, Button, inputStyle } from '../App/Theme';
+import { Wrapper, FormWrapper, Button, inputStyle } from '../App/Theme';
 import RequestResetForm from './style';
 
 const REQUEST_RESET_MUTATION = gql`

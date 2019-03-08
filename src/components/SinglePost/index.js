@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import qs from 'query-string';
-import { Query, Mutation } from 'react-apollo';
-import User from '../User';
+import { Query } from 'react-apollo';
 import { Wrapper } from '../App/Theme';
 import { StyledPost } from './style';
 import Author from '../Author';

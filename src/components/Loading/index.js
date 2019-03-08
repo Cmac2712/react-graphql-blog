@@ -8,7 +8,7 @@ const Loading = props => (
 			src="/images/LoadingIcon.svg"
 			wrapper="span"
 			onInjected={(error) => {
-				console.log({error});
+				error && console.log(error);
 				return;
 			}}
 			svgClassName="loading-icon"

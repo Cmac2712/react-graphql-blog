@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import User from '../User';
 import Post from './Post';
 import Loading from '../Loading';
 import { Wrapper } from '../App/Theme';
-import { StyledPosts, Thumbnail } from './style';
+import { StyledPosts } from './style';
 
 const ALL_POSTS_QUERY = gql`
 	query ALL_POSTS_QUERY {
@@ -43,8 +42,8 @@ class Posts extends Component {
 								if (loading) return <Loading/>
 
 								return posts.map(post => (
-									<Post post={post} clip={this.clip} />
-								)) 
+									<Post key={post.id} post={post} clip={this.clip} />
+								));
 							}
 						}
 					</Query>
