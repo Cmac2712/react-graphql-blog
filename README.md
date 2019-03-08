@@ -1,4 +1,4 @@
-## React GraphQL Blog
+## React GraphQL Blog [![CircleCI](https://circleci.com/gh/Cmac2712/react-graphql-blog/tree/master.svg?style=svg)](https://circleci.com/gh/Cmac2712/react-graphql-blog/tree/master)
 
 [DEMO](https://react-graphql-blog-client.herokuapp.com/)
 
