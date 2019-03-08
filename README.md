@@ -1,6 +1,6 @@
 ## React GraphQL Blog
 
-(DEMO)[https://react-graphql-blog-client.herokuapp.com/]
+[DEMO](https://react-graphql-blog-client.herokuapp.com/)
 
 This is a full-stack blogging application using React + GraphQL.
 
@@ -21,3 +21,8 @@ This is a full-stack blogging application using React + GraphQL.
 
 ### Screenshots
 
+![Homepage](/screenshots/homepage.png?raw=true "Homepage")
+
+![Create Post](/screenshots/create-post.png?raw=true "Create Post")
+
+![Account](/screenshots/account.png?raw=true "Account")
