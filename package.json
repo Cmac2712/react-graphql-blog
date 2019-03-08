@@ -44,8 +44,7 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"npm run server\"",
-    "client": "SKIP_PREFLIGHT_CHECK=true react-scripts build && serve -s build",
-    "client-dev": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "client": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "server": "nodemon server/app -e js,graphql -x node --inspect server/app.js",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "deploy-prisma": "cd server && prisma deploy --env-file ./variables.env",
