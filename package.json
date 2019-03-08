@@ -48,7 +48,7 @@
     "server": "nodemon server/app -e js,graphql -x node --inspect server/app.js",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "deploy-prisma": "cd server && prisma deploy --env-file ./variables.env",
-    "deploy": "git push heroku master && git push heroku-api",
+    "deploy": "git push origin master",
     "test": "NODE_ENV=test jest",
     "test-watch": "NODE_ENV=test jest --watch"
   },

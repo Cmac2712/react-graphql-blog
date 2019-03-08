@@ -39,7 +39,7 @@ Array [
           "$$typeof": Symbol(react.forward_ref),
           "attrs": Array [],
           "componentStyle": ComponentStyle {
-            "componentId": "sc-ifAKCX",
+            "componentId": "sc-bdVaJa",
             "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
@@ -87,7 +87,7 @@ Array [
           "displayName": "styled.nav",
           "foldedComponentIds": Array [],
           "render": [Function],
-          "styledComponentId": "sc-ifAKCX",
+          "styledComponentId": "sc-bdVaJa",
           "target": "nav",
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -259,7 +259,7 @@ Array [
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-ifAKCX",
+          "componentId": "sc-bdVaJa",
           "isStatic": false,
           "lastClassName": "c0",
           "rules": Array [
@@ -307,7 +307,7 @@ Array [
         "displayName": "styled.nav",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-ifAKCX",
+        "styledComponentId": "sc-bdVaJa",
         "target": "nav",
         "toString": [Function],
         "warnTooManyClasses": [Function],
@@ -640,7 +640,7 @@ Array [
           "$$typeof": Symbol(react.forward_ref),
           "attrs": Array [],
           "componentStyle": ComponentStyle {
-            "componentId": "sc-ifAKCX",
+            "componentId": "sc-bdVaJa",
             "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
@@ -688,7 +688,7 @@ Array [
           "displayName": "styled.nav",
           "foldedComponentIds": Array [],
           "render": [Function],
-          "styledComponentId": "sc-ifAKCX",
+          "styledComponentId": "sc-bdVaJa",
           "target": "nav",
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -860,7 +860,7 @@ Array [
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-ifAKCX",
+          "componentId": "sc-bdVaJa",
           "isStatic": false,
           "lastClassName": "c0",
           "rules": Array [
@@ -908,7 +908,7 @@ Array [
         "displayName": "styled.nav",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-ifAKCX",
+        "styledComponentId": "sc-bdVaJa",
         "target": "nav",
         "toString": [Function],
         "warnTooManyClasses": [Function],
