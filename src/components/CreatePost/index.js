@@ -98,6 +98,7 @@ class CreatePost extends Component {
 							<FormWrapper>
 								{ loading && <Loading/> }
 								<CreatePostForm
+									data-test
 									id="create-post-form"
 									className="cms-section"
 									disabled={this.state.uploading}
