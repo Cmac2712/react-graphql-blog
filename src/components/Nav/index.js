@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import Signout from '../Signout';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import User, { CURRENT_USER_QUERY } from '../User';
+import User from '../User';
 import NavBar from './styles';
 
 const Nav = props => (

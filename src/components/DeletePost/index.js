@@ -16,10 +16,8 @@ class DeletePost extends Component {
 
 	updatePosts = (cache, payload) => {
 		const data = cache.readQuery({ query: POSTS_BY_AUTHOR })
-		console.log({payload}, {data});
 
     data.postsByAuthor = data.postsByAuthor.filter(post => post.id !== payload.data.deletePost.id);
-		return;
 
     cache.writeQuery({ query: POSTS_BY_AUTHOR, data });
 	}
@@ -41,12 +39,12 @@ class DeletePost extends Component {
 				}}
 			>{
 				(deletePost) => (
-					<a href="#"
+					<button
 						className={this.props.className}
 						onClick={e => {
 						e.preventDefault();
 						deletePost();
-					}}>Delete</a>
+					}}>Delete</button>
 				)
 			}
 			</Mutation>

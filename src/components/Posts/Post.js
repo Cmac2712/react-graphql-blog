@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import DeletePost from '../DeletePost';
 import { fallBackImage } from '../../config.js';
 import Author from '../Author';
-import Avatar from '../Avatar';
 import { stripHTML } from '../../utils';
 
 

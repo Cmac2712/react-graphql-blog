@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyledSuccessMessage } from './style';
 import { Wrapper } from '../App/Theme';
 

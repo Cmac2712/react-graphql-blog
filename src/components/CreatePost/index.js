@@ -4,12 +4,11 @@ import Loading from '../Loading';
 import { Mutation } from 'react-apollo';
 import { ALL_POSTS_QUERY } from '../Posts'; 
 import { CreatePostForm } from './style';
-import { Wrapper, FormWrapper, Form, Button } from '../App/Theme';
+import { FormWrapper, Button } from '../App/Theme';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
+import { convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-import htmlToDraft from 'html-to-draftjs';
 
 // TODO: Add floating labels
 
@@ -106,7 +105,7 @@ class CreatePost extends Component {
 										  e.preventDefault();
 										  this.setState({ uploading: true });
 										
-										  const thumbnail = await this.uploadImage(e);
+										  await this.uploadImage(e);
 										  const { data } = await createPost();
 
 										  this.setState({ uploading: false });
