@@ -6,7 +6,7 @@ import Account from '../Account';
 import MyPosts from '../MyPosts';
 import UpdatePost from '../UpdatePost';
 import { CmsPage } from './style';
-import { BrowserRouter as Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class Cms extends Component {
 	render() {
