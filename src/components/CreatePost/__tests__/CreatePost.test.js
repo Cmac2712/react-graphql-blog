@@ -9,7 +9,7 @@ import CreatePost from '../index';
 import { mockUser, signedInMocks, signedOutMocks } from '../../../TestUtils';
 
 describe('<CreatePost/>', () => {
-	it('matches snapshot', async () => {
+	it('should render an editor', async () => {
 		const wrapper = mount(
 			<BrowserRouter>
 				<MockedProvider mocks={signedInMocks}>
@@ -17,11 +17,12 @@ describe('<CreatePost/>', () => {
 				</MockedProvider>
 			</BrowserRouter>
 		);
+
 		 await wait();
 		 wrapper.update();
 
-		const createPostForm = toJSON(wrapper.find('[data-test]')); 
-		
-		expect(createPostForm).toMatchSnapshot();
+		const createPostForm = wrapper.find('#create-post-form'); 
+
+		expect(createPostForm.exists()).toBe(true);
 	});
 });

@@ -11,7 +11,7 @@ describe('<Cms/>', () => {
 	it('should match snapshot', () => {
 		const wrapper = mount(
 			<MemoryRouter
-				initialEntries={["/cms"]}
+				initialEntries={[{ pathname: "/cms", key: "testKey" }]}
 				initialIndex={1}
 			>
 				<MockedProvider
@@ -28,7 +28,7 @@ describe('<Cms/>', () => {
 	it('should render CreatePost component when signed in', async () => {
 		const wrapper = mount(
 			<MemoryRouter
-				initialEntries={["/cms"]}
+				initialEntries={[{ pathname: "/cms", key: "testKey" }]}
 				initialIndex={1}
 			>
 				<MockedProvider

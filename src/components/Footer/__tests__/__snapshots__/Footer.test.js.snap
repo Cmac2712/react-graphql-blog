@@ -11,7 +11,7 @@ exports[`<Footer/> should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "xXrDq",
+            "lastClassName": "eJJGiC",
             "rules": Array [
               "
 	padding: ",
@@ -49,6 +49,12 @@ exports[`<Footer/> should match snapshot 1`] = `
               "px;
 	}
 
+	.myname {
+		margin-right: ",
+              [Function],
+              "px;
+	}
+
 ",
             ],
           },
@@ -65,7 +71,7 @@ exports[`<Footer/> should match snapshot 1`] = `
       forwardedRef={null}
     >
       <footer
-        className="sc-ifAKCX xXrDq"
+        className="sc-ifAKCX eJJGiC"
       >
         <styled.div>
           <StyledComponent
@@ -76,13 +82,16 @@ exports[`<Footer/> should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bdVaJa",
                   "isStatic": false,
-                  "lastClassName": "fIKPTH",
+                  "lastClassName": "hDbywE",
                   "rules": Array [
                     "
 	margin: 0 auto;
 	max-width: ",
                     [Function],
                     ";
+	padding: 0 ",
+                    [Function],
+                    "px;
 ",
                   ],
                 },
@@ -99,7 +108,7 @@ exports[`<Footer/> should match snapshot 1`] = `
             forwardedRef={null}
           >
             <div
-              className="sc-bdVaJa fIKPTH"
+              className="sc-bdVaJa hDbywE"
             >
               <div
                 className="footer-container"

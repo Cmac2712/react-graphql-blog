@@ -4,7 +4,10 @@ exports[`<Cms/> should match snapshot 1`] = `
 <MemoryRouter
   initialEntries={
     Array [
-      "/cms",
+      Object {
+        "key": "testKey",
+        "pathname": "/cms",
+      },
     ]
   }
   initialIndex={1}
@@ -19,10 +22,9 @@ exports[`<Cms/> should match snapshot 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "xvtnb8",
+            "key": "testKey",
             "pathname": "/cms",
             "search": "",
-            "state": undefined,
           },
         ],
         "go": [Function],
@@ -33,10 +35,9 @@ exports[`<Cms/> should match snapshot 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "xvtnb8",
+          "key": "testKey",
           "pathname": "/cms",
           "search": "",
-          "state": undefined,
         },
         "push": [Function],
         "replace": [Function],

@@ -14,16 +14,24 @@ Array [
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "FEnpx",
+            "lastClassName": "btIsrt",
             "rules": Array [
               "
 	display: flex;
 	align-items: center;
-	padding: ",
+	//padding: ",
               [Function],
               "px;
 	position: relative;
 	z-index: 5;
+	margin: 0 auto;
+	max-width: ",
+              [Function],
+              ";
+	width: 100%;
+	padding: ",
+              [Function],
+              "px;
 
 	.logo {
 		font-family: ",
@@ -35,6 +43,7 @@ Array [
 		color: ",
               [Function],
               ";
+		padding: 0;
 	}
 	
 	a {
@@ -61,7 +70,7 @@ Array [
       forwardedRef={null}
     >
       <nav
-        className="sc-ifAKCX FEnpx"
+        className="sc-ifAKCX btIsrt"
         data-test={true}
       >
         <Link
@@ -74,7 +83,7 @@ Array [
             href="/"
             onClick={[Function]}
           >
-            React GraphQl Blog
+            React GraphQL Blog
           </a>
         </Link>
         <User>
@@ -198,16 +207,24 @@ Array [
         "componentStyle": ComponentStyle {
           "componentId": "sc-ifAKCX",
           "isStatic": false,
-          "lastClassName": "FEnpx",
+          "lastClassName": "btIsrt",
           "rules": Array [
             "
 	display: flex;
 	align-items: center;
-	padding: ",
+	//padding: ",
             [Function],
             "px;
 	position: relative;
 	z-index: 5;
+	margin: 0 auto;
+	max-width: ",
+            [Function],
+            ";
+	width: 100%;
+	padding: ",
+            [Function],
+            "px;
 
 	.logo {
 		font-family: ",
@@ -219,6 +236,7 @@ Array [
 		color: ",
             [Function],
             ";
+		padding: 0;
 	}
 	
 	a {
@@ -245,7 +263,7 @@ Array [
     forwardedRef={null}
   >
     <nav
-      className="sc-ifAKCX FEnpx"
+      className="sc-ifAKCX btIsrt"
       data-test={true}
     >
       <Link
@@ -258,7 +276,7 @@ Array [
           href="/"
           onClick={[Function]}
         >
-          React GraphQl Blog
+          React GraphQL Blog
         </a>
       </Link>
       <User>
@@ -373,7 +391,7 @@ Array [
     </nav>
   </StyledComponent>,
   <nav
-    className="sc-ifAKCX FEnpx"
+    className="sc-ifAKCX btIsrt"
     data-test={true}
   >
     <Link
@@ -386,7 +404,7 @@ Array [
         href="/"
         onClick={[Function]}
       >
-        React GraphQl Blog
+        React GraphQL Blog
       </a>
     </Link>
     <User>
@@ -516,16 +534,24 @@ Array [
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "FEnpx",
+            "lastClassName": "btIsrt",
             "rules": Array [
               "
 	display: flex;
 	align-items: center;
-	padding: ",
+	//padding: ",
               [Function],
               "px;
 	position: relative;
 	z-index: 5;
+	margin: 0 auto;
+	max-width: ",
+              [Function],
+              ";
+	width: 100%;
+	padding: ",
+              [Function],
+              "px;
 
 	.logo {
 		font-family: ",
@@ -537,6 +563,7 @@ Array [
 		color: ",
               [Function],
               ";
+		padding: 0;
 	}
 	
 	a {
@@ -563,7 +590,7 @@ Array [
       forwardedRef={null}
     >
       <nav
-        className="sc-ifAKCX FEnpx"
+        className="sc-ifAKCX btIsrt"
         data-test={true}
       >
         <Link
@@ -576,7 +603,7 @@ Array [
             href="/"
             onClick={[Function]}
           >
-            React GraphQl Blog
+            React GraphQL Blog
           </a>
         </Link>
         <User>
@@ -700,16 +727,24 @@ Array [
         "componentStyle": ComponentStyle {
           "componentId": "sc-ifAKCX",
           "isStatic": false,
-          "lastClassName": "FEnpx",
+          "lastClassName": "btIsrt",
           "rules": Array [
             "
 	display: flex;
 	align-items: center;
-	padding: ",
+	//padding: ",
             [Function],
             "px;
 	position: relative;
 	z-index: 5;
+	margin: 0 auto;
+	max-width: ",
+            [Function],
+            ";
+	width: 100%;
+	padding: ",
+            [Function],
+            "px;
 
 	.logo {
 		font-family: ",
@@ -721,6 +756,7 @@ Array [
 		color: ",
             [Function],
             ";
+		padding: 0;
 	}
 	
 	a {
@@ -747,7 +783,7 @@ Array [
     forwardedRef={null}
   >
     <nav
-      className="sc-ifAKCX FEnpx"
+      className="sc-ifAKCX btIsrt"
       data-test={true}
     >
       <Link
@@ -760,7 +796,7 @@ Array [
           href="/"
           onClick={[Function]}
         >
-          React GraphQl Blog
+          React GraphQL Blog
         </a>
       </Link>
       <User>
@@ -875,7 +911,7 @@ Array [
     </nav>
   </StyledComponent>,
   <nav
-    className="sc-ifAKCX FEnpx"
+    className="sc-ifAKCX btIsrt"
     data-test={true}
   >
     <Link
@@ -888,7 +924,7 @@ Array [
         href="/"
         onClick={[Function]}
       >
-        React GraphQl Blog
+        React GraphQL Blog
       </a>
     </Link>
     <User>
