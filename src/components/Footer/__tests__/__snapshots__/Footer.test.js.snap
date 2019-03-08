@@ -1,6 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer/> should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 0 px;
+}
+
+.c0 {
+  padding: px;
+  background-color: #f1f1f1;
+  margin-top: NaNpx;
+  font-size: px;
+}
+
+.c0 .footer-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .github {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: auto;
+}
+
+.c0 .github-icon-container {
+  font-size: 0;
+  height: 18px;
+  width: 18px;
+}
+
+.c0 .github span:first-child {
+  margin-right: NaNpx;
+}
+
+.c0 .myname {
+  margin-right: NaNpx;
+}
+
 <Footer>
   <styled.footer>
     <StyledComponent
@@ -11,7 +64,7 @@ exports[`<Footer/> should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "eJJGiC",
+            "lastClassName": "c0",
             "rules": Array [
               "
 	padding: ",
@@ -71,7 +124,7 @@ exports[`<Footer/> should match snapshot 1`] = `
       forwardedRef={null}
     >
       <footer
-        className="sc-ifAKCX eJJGiC"
+        className="c0"
       >
         <styled.div>
           <StyledComponent
@@ -82,7 +135,7 @@ exports[`<Footer/> should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bdVaJa",
                   "isStatic": false,
-                  "lastClassName": "hDbywE",
+                  "lastClassName": "c1",
                   "rules": Array [
                     "
 	margin: 0 auto;
@@ -108,7 +161,7 @@ exports[`<Footer/> should match snapshot 1`] = `
             forwardedRef={null}
           >
             <div
-              className="sc-bdVaJa hDbywE"
+              className="c1"
             >
               <div
                 className="footer-container"
@@ -127,7 +180,7 @@ exports[`<Footer/> should match snapshot 1`] = `
                     loading={null}
                     onInjected={[Function]}
                     renumerateIRIElements={true}
-                    src="./images/github.svg"
+                    src="/images/github.svg"
                     svgClassName="github-icon"
                     svgStyle={
                       Object {

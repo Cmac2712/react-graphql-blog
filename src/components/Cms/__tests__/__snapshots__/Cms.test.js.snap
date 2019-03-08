@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Cms/> should match snapshot 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
 <MemoryRouter
   initialEntries={
     Array [
@@ -5720,9 +5731,9 @@ exports[`<Cms/> should match snapshot 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-ifAKCX",
+                          "componentId": "sc-bdVaJa",
                           "isStatic": true,
-                          "lastClassName": "jeFMKw",
+                          "lastClassName": "c0",
                           "rules": Array [
                             "
 	position: absolute;
@@ -5739,7 +5750,7 @@ exports[`<Cms/> should match snapshot 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-ifAKCX",
+                        "styledComponentId": "sc-bdVaJa",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -5749,7 +5760,7 @@ exports[`<Cms/> should match snapshot 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-ifAKCX jeFMKw"
+                      className="c0"
                     >
                       <ReactSVG
                         evalScripts="never"

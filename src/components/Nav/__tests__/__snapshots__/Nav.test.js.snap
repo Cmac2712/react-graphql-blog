@@ -2,7 +2,34 @@
 
 exports[`<Nav/> matches snapshot (logged in) 1`] = `
 Array [
-  <styled.nav
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<styled.nav
     data-test={true}
   >
     <StyledComponent
@@ -14,7 +41,7 @@ Array [
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "btIsrt",
+            "lastClassName": "c0",
             "rules": Array [
               "
 	display: flex;
@@ -70,7 +97,7 @@ Array [
       forwardedRef={null}
     >
       <nav
-        className="sc-ifAKCX btIsrt"
+        className="c0"
         data-test={true}
       >
         <Link
@@ -198,7 +225,34 @@ Array [
       </nav>
     </StyledComponent>
   </styled.nav>,
-  <StyledComponent
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<StyledComponent
     data-test={true}
     forwardedComponent={
       Object {
@@ -207,7 +261,7 @@ Array [
         "componentStyle": ComponentStyle {
           "componentId": "sc-ifAKCX",
           "isStatic": false,
-          "lastClassName": "btIsrt",
+          "lastClassName": "c0",
           "rules": Array [
             "
 	display: flex;
@@ -263,7 +317,7 @@ Array [
     forwardedRef={null}
   >
     <nav
-      className="sc-ifAKCX btIsrt"
+      className="c0"
       data-test={true}
     >
       <Link
@@ -390,8 +444,35 @@ Array [
       </User>
     </nav>
   </StyledComponent>,
-  <nav
-    className="sc-ifAKCX btIsrt"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<nav
+    className="c0"
     data-test={true}
   >
     <Link
@@ -522,7 +603,34 @@ Array [
 
 exports[`<Nav/> matches snapshot (logged out) 1`] = `
 Array [
-  <styled.nav
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<styled.nav
     data-test={true}
   >
     <StyledComponent
@@ -534,7 +642,7 @@ Array [
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "btIsrt",
+            "lastClassName": "c0",
             "rules": Array [
               "
 	display: flex;
@@ -590,7 +698,7 @@ Array [
       forwardedRef={null}
     >
       <nav
-        className="sc-ifAKCX btIsrt"
+        className="c0"
         data-test={true}
       >
         <Link
@@ -718,7 +826,34 @@ Array [
       </nav>
     </StyledComponent>
   </styled.nav>,
-  <StyledComponent
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<StyledComponent
     data-test={true}
     forwardedComponent={
       Object {
@@ -727,7 +862,7 @@ Array [
         "componentStyle": ComponentStyle {
           "componentId": "sc-ifAKCX",
           "isStatic": false,
-          "lastClassName": "btIsrt",
+          "lastClassName": "c0",
           "rules": Array [
             "
 	display: flex;
@@ -783,7 +918,7 @@ Array [
     forwardedRef={null}
   >
     <nav
-      className="sc-ifAKCX btIsrt"
+      className="c0"
       data-test={true}
     >
       <Link
@@ -910,8 +1045,35 @@ Array [
       </User>
     </nav>
   </StyledComponent>,
-  <nav
-    className="sc-ifAKCX btIsrt"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  padding: px;
+}
+
+.c0 .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding: 0;
+}
+
+.c0 a {
+  padding: 0 px;
+}
+
+<nav
+    className="c0"
     data-test={true}
   >
     <Link
