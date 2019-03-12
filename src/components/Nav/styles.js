@@ -13,11 +13,15 @@ const NavBar = styled.nav`
 
 	.logo {
 		font-family: ${props => props.theme.headerFont};
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 		margin-right: auto;
 		color: ${props => props.theme.brandColor};
 		padding: 0;
+
+		@media screen and (min-width: ${props => props.theme.breakpoints.laptop}px) {
+			font-size: 1.5rem;
+		}
 	}
 	
 	a {
