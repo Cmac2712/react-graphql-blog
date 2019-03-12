@@ -1,7 +1,8 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: https://us1.prisma.sh/cmac2712-c30e8d/react-blog/dev
+endpoint: ${env:PRISMA_ENDPOINT}
+##endpoint: https://react-blog-prod-ea4119020a.herokuapp.com/react-blog-prod/prod
+##endpoint: https://us1.prisma.sh/cmac2712-c30e8d/react-blog/dev
 datamodel: datamodel.prisma
-##secret: ${env:PRISMA_SECRET}
+secret: ${env:PRISMA_SECRET}
 hooks:
   post-deploy:
     - graphql get-schema -p prisma
