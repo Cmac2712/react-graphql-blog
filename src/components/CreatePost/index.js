@@ -5,10 +5,9 @@ import { Mutation } from 'react-apollo';
 import { ALL_POSTS_QUERY } from '../Posts'; 
 import { CreatePostForm } from './style';
 import { FormWrapper, Button } from '../App/Theme';
-import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw, EditorState } from 'draft-js';
-import draftToHtml from 'draftjs-to-html';
 
 // TODO: Add floating labels
 
@@ -26,7 +25,6 @@ const CREATE_POST_MUTATION = gql`
 			id
 			title
 			content
-			editorState
 			thumbnail
 		}
 	}
@@ -36,7 +34,6 @@ class CreatePost extends Component {
 
 	state = {
 		title: '', 
-		content: '', 
 		editorState: EditorState.createEmpty(), 
 		uploading: false
 	}
@@ -74,12 +71,8 @@ class CreatePost extends Component {
 	};
 
 	handleEditorStateChange = editorState => {
-		const rawContentState = convertToRaw(editorState.getCurrentContent());
-		const markup = draftToHtml(rawContentState);
-
 		this.setState({
-			editorState, 
-			content: markup
+			editorState: editorState
 		});
 	}
 
@@ -87,7 +80,11 @@ class CreatePost extends Component {
 		return (
 					<Mutation
 						mutation={CREATE_POST_MUTATION}
-						variables={this.state}
+						variables={{
+							title: this.state.title, 
+							content: this.state.content, 
+							thumbnail: this.state.thumbnail
+						}}
 						refetchQueries={[{query: ALL_POSTS_QUERY}]}
 					>
 				{
@@ -104,7 +101,12 @@ class CreatePost extends Component {
 									onSubmit={async e => {
 										  e.preventDefault();
 										  this.setState({ uploading: true });
-										
+											const rawEditorState = convertToRaw(this.state.editorState.getCurrentContent())
+
+											this.setState({
+												content: JSON.stringify(rawEditorState)
+											});
+
 										  await this.uploadImage(e);
 										  const { data } = await createPost();
 
@@ -135,7 +137,7 @@ class CreatePost extends Component {
 											wrapperClassName="editor-wrapper"
 											editorClassName="editor"
 											toolbarClassName="editor-toolbar"
-											value={this.state.content}
+											editorState={this.state.editorState}
 											onEditorStateChange={this.handleEditorStateChange}
 										/>
 										<Button>Publish{this.state.uploading && 'ing'}</Button>

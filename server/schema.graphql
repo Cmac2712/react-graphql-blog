@@ -19,7 +19,7 @@ type Query {
 }
 
 type Mutation {
-	createPost(title: String!, editorState: String, content: String!, thumbnail: String): Post!
+	createPost(title: String!, content: String, thumbnail: String): Post!
 	updatePost(id: ID!, title: String, content: String): Post!
 	updateUserInfo(screenName: String, avatar: String): User!
 	deletePost(id: ID!): Post

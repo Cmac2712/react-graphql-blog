@@ -16,7 +16,6 @@ const mutations = {
 			data: {
 				title, 
 				content, 
-				editorState, 
 				thumbnail, 
 				user: {
 					connect: {

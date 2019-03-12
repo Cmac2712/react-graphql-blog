@@ -6,6 +6,8 @@ import { Wrapper } from '../App/Theme';
 import { StyledPost } from './style';
 import Author from '../Author';
 import Loading from '../Loading';
+import { convertFromRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
 
 const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {
@@ -42,6 +44,11 @@ class SinglePost extends Component {
 
 					if (loading) return <Loading/>;
 
+					const content = post && JSON.parse(post.content);
+
+					console.log(draftToHtml(content));
+					console.log(content);
+
 					return (
 							<StyledPost>
 								<h1>{post.title}</h1>
@@ -51,7 +58,7 @@ class SinglePost extends Component {
 											}}
 								>
 								</div>
-								<div dangerouslySetInnerHTML={{__html: post.content}} />
+								<div dangerouslySetInnerHTML={{__html: draftToHtml(content)}} />
 							
 								<Author
 									name={post.user.name}

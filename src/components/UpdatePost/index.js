@@ -4,25 +4,25 @@ import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import Loading from '../Loading';
 import { Form, Button } from '../App/Theme';
+import { UpdatePostForm } from './style';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { SINGLE_POST_QUERY } from '../SinglePost';
-import PropTypes from 'prop-types';
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
 
 const UPDATE_POST_MUTATION = gql`
   mutation UPDATE_POST_QUERY($id: ID!, $title: String, $content: String) {
 	updatePost(id: $id, title: $title, content: $content) {
 	  id
+		content
 	}
   }
 `;
 
 class UpdatePost extends Component {
 
-	static propTypes = {
-		id: PropTypes.string.isRequired
-	}
-
 	state = {
-		id: qs.parse(this.props.location.search).postId
+		id: qs.parse(this.props.location.search).postId 
 	}
 
 	handleChange = e => {
@@ -31,11 +31,23 @@ class UpdatePost extends Component {
 	}
 
 	handleSubmit = async (updatePost) => {
-		await updatePost({
+		const rawEditorState = convertToRaw(this.state.editorState.getCurrentContent())
+		this.setState({ uploading: true });
+
+		const { data } = await updatePost({
 			variables: {
-				id: this.props.id,
 				...this.state,
+				content: JSON.stringify(rawEditorState)
 			},
+		});
+
+		this.setState({ uploading: false });
+		this.props.history.push(`/single?postId=${data.updatePost.id}`)
+	}
+
+	handleEditorStateChange = editorState => {
+		this.setState({
+			editorState: editorState
 		});
 	}
 
@@ -49,14 +61,19 @@ class UpdatePost extends Component {
 
 					if (loading) return <Loading/>;
 
+					const content = convertFromRaw(JSON.parse(data.post.content)); 
+
 					return (
 						<Mutation
 							mutation={UPDATE_POST_MUTATION}
 							variables={this.state}
 						>
 							{(updatePost, { loading, error }) => {
+
+								if (loading) return <Loading/>;
+
 								return (
-									<Form
+									<UpdatePostForm
 										className="cms-section"
 										onSubmit={e => {
 											e.preventDefault();
@@ -73,16 +90,19 @@ class UpdatePost extends Component {
 												defaultValue={data.post.title}
 												onChange={this.handleChange}
 											/>
-											<textarea
+											<Editor
 												id="content"
 												name="content"
-												placeholder="content"
-												defaultValue={data.post.content}
-												onChange={this.handleChange}
+												rows="10"
+												wrapperClassName="editor-wrapper"
+												editorClassName="editor"
+												toolbarClassName="editor-toolbar"
+												defaultEditorState={EditorState.createWithContent(content)}
+												onEditorStateChange={this.handleEditorStateChange}
 											/>
-											<Button>Submit</Button>
+											<Button>Publish{this.state.uploading && 'ing'}</Button>
 										</fieldset>
-									</Form>
+									</UpdatePostForm>
 								)
 							}}
 						</Mutation>

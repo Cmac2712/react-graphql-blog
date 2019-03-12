@@ -5,10 +5,11 @@ import Author from '../Author';
 import { stripHTML } from '../../utils';
 import PropTypes from 'prop-types';
 import { StyledPost, Thumbnail } from './style';
+import draftToHtml from 'draftjs-to-html';
 
 const Post = ({ post, id, clip }) => { 
 
-	const content = clip( stripHTML(post.content) );	
+	const content = clip( stripHTML(draftToHtml(JSON.parse(post.content))) );	
 
 	return (
 		<StyledPost key={post.id}>
