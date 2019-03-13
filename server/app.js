@@ -9,8 +9,8 @@ const { Prisma } = require('prisma-binding');
 
 // Create our Prisma instance to communicate with the db
 const prisma = new Prisma({
-	typeDefs: './server/generated/prisma.graphql', 
-    endpoint: process.env.PRISMA_ENDPOINT,  
+		typeDefs: './server/generated/prisma.graphql', 
+		endpoint: process.env.PRISMA_ENDPOINT,  
     secret: process.env.PRISMA_SECRET, 
     debug: false
 });

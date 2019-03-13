@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import qs from 'query-string';
 import { Query, Mutation } from 'react-apollo';
 import Loading from '../Loading';
-import { Form, Button } from '../App/Theme';
+import { Button } from '../App/Theme';
 import { UpdatePostForm } from './style';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';

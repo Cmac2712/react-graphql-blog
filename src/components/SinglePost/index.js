@@ -6,7 +6,6 @@ import { Wrapper } from '../App/Theme';
 import { StyledPost } from './style';
 import Author from '../Author';
 import Loading from '../Loading';
-import { convertFromRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 
 const SINGLE_POST_QUERY = gql`
