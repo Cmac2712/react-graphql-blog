@@ -6,6 +6,8 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import Cms from '../index';
 import { mockUser, signedInMocks, signedOutMocks } from '../../../TestUtils';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../App/Theme';
 
 describe('<Cms/>', () => {
 	it('should match snapshot', () => {
@@ -17,7 +19,9 @@ describe('<Cms/>', () => {
 				<MockedProvider
 					mocks={signedInMocks}
 				>
-					<Cms/>
+					<ThemeProvider theme={theme}>
+						<Cms/>
+					</ThemeProvider>
 				</MockedProvider>
 			</MemoryRouter>
 		);
@@ -34,7 +38,9 @@ describe('<Cms/>', () => {
 				<MockedProvider
 					mocks={signedInMocks}
 				>
-					<Cms/>
+					<ThemeProvider theme={theme}>
+						<Cms/>
+					</ThemeProvider>
 				</MockedProvider>
 			</MemoryRouter>
 		);

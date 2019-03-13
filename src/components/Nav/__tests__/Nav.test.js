@@ -7,13 +7,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { CURRENT_USER_QUERY } from '../../User';
 import Nav  from '../index';
 import { mockUser, signedInMocks, signedOutMocks } from '../../../TestUtils';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../App/Theme';
 
 describe('<Nav/>', () => {
 	it('matches snapshot (logged out)', async () => {
 		const wrapper = mount(
 			<BrowserRouter>
 				<MockedProvider mocks={signedOutMocks}>
-					<Nav/>
+					<ThemeProvider theme={theme}>
+						<Nav/>
+					</ThemeProvider>
 				</MockedProvider>
 			</BrowserRouter>
 		);
@@ -27,7 +31,9 @@ describe('<Nav/>', () => {
 		const wrapper = mount(
 			<BrowserRouter>
 				<MockedProvider mocks={signedOutMocks}>
-					<Nav/>
+					<ThemeProvider theme={theme}>
+						<Nav/>
+					</ThemeProvider>
 				</MockedProvider>
 			</BrowserRouter>
 		);
@@ -41,7 +47,9 @@ describe('<Nav/>', () => {
 		const wrapper = mount(
 			<BrowserRouter>
 				<MockedProvider mocks={signedOutMocks}>
-					<Nav/>
+					<ThemeProvider theme={theme}>
+						<Nav/>
+					</ThemeProvider>
 				</MockedProvider>
 			</BrowserRouter>
 		);
@@ -57,7 +65,9 @@ describe('<Nav/>', () => {
 		const wrapper = mount(
 			<BrowserRouter>
 				<MockedProvider mocks={signedInMocks}>
-					<Nav/>
+					<ThemeProvider theme={theme}>
+						<Nav/>
+					</ThemeProvider>
 				</MockedProvider>
 			</BrowserRouter>
 		);

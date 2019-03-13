@@ -14,19 +14,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <styled.nav
@@ -64,13 +74,19 @@ Array [
 		font-family: ",
               [Function],
               ";
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 		margin-right: auto;
 		color: ",
               [Function],
               ";
 		padding: 0;
+
+		@media screen and (min-width: ",
+              [Function],
+              "px) {
+			font-size: 1.5rem;
+		}
 	}
 	
 	a {
@@ -237,19 +253,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <StyledComponent
@@ -284,13 +310,19 @@ Array [
 		font-family: ",
             [Function],
             ";
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 		margin-right: auto;
 		color: ",
             [Function],
             ";
 		padding: 0;
+
+		@media screen and (min-width: ",
+            [Function],
+            "px) {
+			font-size: 1.5rem;
+		}
 	}
 	
 	a {
@@ -456,19 +488,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <nav
@@ -615,19 +657,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <styled.nav
@@ -665,13 +717,19 @@ Array [
 		font-family: ",
               [Function],
               ";
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 		margin-right: auto;
 		color: ",
               [Function],
               ";
 		padding: 0;
+
+		@media screen and (min-width: ",
+              [Function],
+              "px) {
+			font-size: 1.5rem;
+		}
 	}
 	
 	a {
@@ -838,19 +896,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <StyledComponent
@@ -885,13 +953,19 @@ Array [
 		font-family: ",
             [Function],
             ";
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 		margin-right: auto;
 		color: ",
             [Function],
             ";
 		padding: 0;
+
+		@media screen and (min-width: ",
+            [Function],
+            "px) {
+			font-size: 1.5rem;
+		}
 	}
 	
 	a {
@@ -1057,19 +1131,29 @@ Array [
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  max-width: 1280px;
   width: 100%;
-  padding: px;
+  padding: 25px;
 }
 
 .c0 .logo {
-  font-size: 1.5rem;
+  font-family: "Alegreya",serif;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: auto;
+  color: #00aa9c;
   padding: 0;
 }
 
 .c0 a {
-  padding: 0 px;
+  color: #666;
+  padding: 0 25px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 .logo {
+    font-size: 1.5rem;
+  }
 }
 
 <nav
