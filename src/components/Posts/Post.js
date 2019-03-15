@@ -22,6 +22,7 @@ const Post = ({ post, id, clip }) => {
 				/>
 				<div className="text">
 					<h3>{post.title}</h3>
+					<p>{content}</p>
 					<Author
 						className="post__author"
 						name={post.user.name}
