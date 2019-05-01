@@ -44,7 +44,7 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"npm run server\"",
-    "client": "serve -s build -l 3000",
+    "client": "serve -s build -l process.env.PORT",
     "server": "nodemon server/app -e js,graphql -x node --inspect server/app.js",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "deploy-prisma": "cd server && prisma deploy --env-file ./variables.env",
