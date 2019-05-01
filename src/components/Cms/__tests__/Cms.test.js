@@ -10,7 +10,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../../App/Theme';
 
 describe('<Cms/>', () => {
-	it('should match snapshot', () => {
+	xit('should match snapshot', () => {
 		const wrapper = mount(
 			<MemoryRouter
 				initialEntries={[{ pathname: "/cms", key: "testKey" }]}
