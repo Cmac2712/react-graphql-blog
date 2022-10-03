@@ -23,7 +23,7 @@ const ALL_POSTS_QUERY = gql`
 `;
 
 const clip = (text) => {
-	return text.split(/\s+/).slice(0, 15).join(" ") + "...";
+  return text.split(/\s+/).slice(0, 15).join(" ") + "...";
 };
 
 const Posts = () => {
@@ -33,7 +33,6 @@ const Posts = () => {
       <StyledPosts>
         <Query query={ALL_POSTS_QUERY}>
           {({ data: { posts }, loading, error }) => {
-
             if (loading) return <Loading />;
 
             return posts.map((post) => (
